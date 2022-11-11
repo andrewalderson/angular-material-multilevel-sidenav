@@ -12,7 +12,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationRailComponent implements OnInit {
-  @HostBinding("class") hostClasses = "app-navigation-rail";
+  @HostBinding("class.app-navigation-rail") selectorClass = true;
   constructor() {}
 
   ngOnInit(): void {}

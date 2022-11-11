@@ -12,7 +12,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationRailItemComponent implements OnInit {
-  @HostBinding("class") hostClasses = "app-navigation-rail-item";
+  @HostBinding("class.app-navigation-rail-item") selectorClass = true;
 
   constructor() {}
 
