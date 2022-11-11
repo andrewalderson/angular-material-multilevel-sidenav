@@ -1,0 +1,28 @@
+@use "@angular/material" as mat;
+@use "sass:map";
+
+@mixin color($config-or-theme) {
+}
+
+@mixin typography($config-or-theme) {
+}
+
+@mixin density($config-or-theme) {
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($color-config);
+  }
+
+  $density-config: mat.get-density-config($theme);
+  @if $density-config != null {
+    @include density($density-config);
+  }
+
+  $typography-config: mat.get-typography-config($theme);
+  @if $typography-config != null {
+    @include typography($typography-config);
+  }
+}
