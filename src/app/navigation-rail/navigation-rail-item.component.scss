@@ -1,0 +1,36 @@
+$base-height: 72px;
+$default-icon-padding: 24px;
+$icon-top-padding: 14px;
+$label-bottom-padding: 16px;
+
+.app-navigation-rail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  outline: none;
+  height: $base-height;
+  width: 100%;
+
+  .app-navigation-rail-item__icon {
+    padding-top: $default-icon-padding;
+    padding-bottom: $default-icon-padding;
+  }
+
+  &.app-navigation-rail-item-with-label {
+    .app-navigation-rail-item__icon {
+      padding-top: $icon-top-padding;
+      padding-bottom: 0;
+    }
+    .app-navigation-rail-item__label {
+      padding-top: 0;
+      padding-bottom: $label-bottom-padding;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

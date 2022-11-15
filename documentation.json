@@ -5,7 +5,86 @@
     "guards": [],
     "interceptors": [],
     "classes": [],
-    "directives": [],
+    "directives": [
+        {
+            "name": "NavigationRailItemIconDirective",
+            "id": "directive-NavigationRailItemIconDirective-c4980fe865f1470a611e7dc482cfd802a88717fc99a165030d957b5c4388d9a0ffddc4132b148bb5cd2e66511aa0e7fb992e7a522b10b94af6ca072d255db502",
+            "file": "src/app/navigation-rail/navigation-rail-item.component.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  ContentChild,\n  Directive,\n  HostBinding,\n  OnInit,\n  ViewEncapsulation,\n} from \"@angular/core\";\n\n@Directive({\n  selector: \"[appNavigationRailItemIcon]\",\n})\nexport class NavigationRailItemIconDirective {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item__icon\";\n  }\n}\n\n@Directive({\n  selector: \"[appNavigationRailItemLabel]\",\n})\nexport class NavigationRailItemLabelDirective {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item__label\";\n  }\n}\n\n@Component({\n  selector: \"app-navigation-rail-item,[app-navigation-rail-item]\",\n  templateUrl: \"./navigation-rail-item.component.html\",\n  styleUrls: [\"./navigation-rail-item.component.scss\"],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n})\nexport class NavigationRailItemComponent implements OnInit {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item\";\n  }\n\n  @ContentChild(NavigationRailItemIconDirective)\n  _icon?: NavigationRailItemIconDirective;\n\n  @ContentChild(NavigationRailItemLabelDirective)\n  _label?: NavigationRailItemLabelDirective;\n\n  @HostBinding(\"class.app-navigation-rail-item-with-label\") get labelClass() {\n    return this._label;\n  }\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "selector": "[appNavigationRailItemIcon]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [
+                {
+                    "name": "class",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "accessors": {
+                "hostClasses": {
+                    "name": "hostClasses",
+                    "getSignature": {
+                        "name": "hostClasses",
+                        "type": "",
+                        "returnType": "",
+                        "line": 15
+                    }
+                }
+            }
+        },
+        {
+            "name": "NavigationRailItemLabelDirective",
+            "id": "directive-NavigationRailItemLabelDirective-c4980fe865f1470a611e7dc482cfd802a88717fc99a165030d957b5c4388d9a0ffddc4132b148bb5cd2e66511aa0e7fb992e7a522b10b94af6ca072d255db502",
+            "file": "src/app/navigation-rail/navigation-rail-item.component.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  ContentChild,\n  Directive,\n  HostBinding,\n  OnInit,\n  ViewEncapsulation,\n} from \"@angular/core\";\n\n@Directive({\n  selector: \"[appNavigationRailItemIcon]\",\n})\nexport class NavigationRailItemIconDirective {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item__icon\";\n  }\n}\n\n@Directive({\n  selector: \"[appNavigationRailItemLabel]\",\n})\nexport class NavigationRailItemLabelDirective {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item__label\";\n  }\n}\n\n@Component({\n  selector: \"app-navigation-rail-item,[app-navigation-rail-item]\",\n  templateUrl: \"./navigation-rail-item.component.html\",\n  styleUrls: [\"./navigation-rail-item.component.scss\"],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n})\nexport class NavigationRailItemComponent implements OnInit {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item\";\n  }\n\n  @ContentChild(NavigationRailItemIconDirective)\n  _icon?: NavigationRailItemIconDirective;\n\n  @ContentChild(NavigationRailItemLabelDirective)\n  _label?: NavigationRailItemLabelDirective;\n\n  @HostBinding(\"class.app-navigation-rail-item-with-label\") get labelClass() {\n    return this._label;\n  }\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "selector": "[appNavigationRailItemLabel]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [
+                {
+                    "name": "class",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "accessors": {
+                "hostClasses": {
+                    "name": "hostClasses",
+                    "getSignature": {
+                        "name": "hostClasses",
+                        "type": "",
+                        "returnType": "",
+                        "line": 24
+                    }
+                }
+            }
+        }
+    ],
     "components": [
         {
             "name": "AppComponent",
@@ -49,10 +128,12 @@
         },
         {
             "name": "NavigationRailComponent",
-            "id": "component-NavigationRailComponent-75f263eba7554b6a831b12df5edbc922a4842c2c7a95bede5bfbba2985dedf428fb43af09e4dd5e2aacc3ae875cae123996d57dc26511313d8d51ecad7992d5e",
+            "id": "component-NavigationRailComponent-bcb7c8ab936c08ee84adde62d6a8eae3ce5de6c0abae784326db029a3a52be1f16c7eb2eb14dd07167bd2d1bc13ffed4a122bca3c1a11f4991e3454f8bf781db",
             "file": "src/app/navigation-rail/navigation-rail.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -68,24 +149,7 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "hostClasses",
-                    "defaultValue": "\"app-navigation-rail\"",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 15,
-                    "decorators": [
-                        {
-                            "name": "HostBinding",
-                            "stringifiedArguments": "'class'"
-                        }
-                    ]
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -93,7 +157,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -102,11 +166,18 @@
             "deprecationMessage": "",
             "hostBindings": [
                 {
-                    "name": "class",
-                    "defaultValue": "\"app-navigation-rail\"",
+                    "name": "attr.role",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "class",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 }
@@ -115,11 +186,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  HostBinding,\n  OnInit,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"app-navigation-rail\",\n  templateUrl: \"./navigation-rail.component.html\",\n  styleUrls: [\"./navigation-rail.component.scss\"],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class NavigationRailComponent implements OnInit {\n  @HostBinding(\"class\") hostClasses = \"app-navigation-rail\";\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  HostBinding,\n  OnInit,\n  ViewEncapsulation,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"app-navigation-rail\",\n  templateUrl: \"./navigation-rail.component.html\",\n  styleUrls: [\"./navigation-rail.component.scss\"],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n})\nexport class NavigationRailComponent implements OnInit {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail\";\n  }\n\n  @HostBinding(\"attr.role\") get role() {\n    return \"navigation\";\n  }\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "$base-width: 72px;\r\n$top-padding: 8px;\r\n\r\n.app-navigation-rail {\r\n  display: block;\r\n  width: $base-width;\r\n  padding-top: $top-padding;\r\n  -webkit-tap-highlight-color: transparent;\r\n}\r\n",
                     "styleUrl": "./navigation-rail.component.scss"
                 }
             ],
@@ -130,24 +201,46 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 15
+                "line": 23
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>navigation-rail works!</p>\n"
+            "accessors": {
+                "hostClasses": {
+                    "name": "hostClasses",
+                    "getSignature": {
+                        "name": "hostClasses",
+                        "type": "",
+                        "returnType": "",
+                        "line": 17
+                    }
+                },
+                "role": {
+                    "name": "role",
+                    "getSignature": {
+                        "name": "role",
+                        "type": "",
+                        "returnType": "",
+                        "line": 21
+                    }
+                }
+            },
+            "templateData": "<ng-content></ng-content>\n"
         },
         {
             "name": "NavigationRailItemComponent",
-            "id": "component-NavigationRailItemComponent-8b0660a28d014c6b94d207be1ed06fa561b5446f44a1b0678575782aff0d2659537cb75c6bb1884243e7480aed59f4663964c2de6d983efb292b90b30e28fd25",
+            "id": "component-NavigationRailItemComponent-c4980fe865f1470a611e7dc482cfd802a88717fc99a165030d957b5c4388d9a0ffddc4132b148bb5cd2e66511aa0e7fb992e7a522b10b94af6ca072d255db502",
             "file": "src/app/navigation-rail/navigation-rail-item.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-navigation-rail-item",
+            "selector": "app-navigation-rail-item,[app-navigation-rail-item]",
             "styleUrls": [
                 "./navigation-rail-item.component.scss"
             ],
@@ -160,18 +253,32 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "hostClasses",
-                    "defaultValue": "\"app-navigation-rail-item\"",
+                    "name": "_icon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
+                    "type": "NavigationRailItemIconDirective",
+                    "optional": true,
                     "description": "",
-                    "line": 15,
+                    "line": 42,
                     "decorators": [
                         {
-                            "name": "HostBinding",
-                            "stringifiedArguments": "'class'"
+                            "name": "ContentChild",
+                            "stringifiedArguments": "NavigationRailItemIconDirective"
+                        }
+                    ]
+                },
+                {
+                    "name": "_label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NavigationRailItemLabelDirective",
+                    "optional": true,
+                    "description": "",
+                    "line": 45,
+                    "decorators": [
+                        {
+                            "name": "ContentChild",
+                            "stringifiedArguments": "NavigationRailItemLabelDirective"
                         }
                     ]
                 }
@@ -183,7 +290,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 53,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -193,11 +300,18 @@
             "hostBindings": [
                 {
                     "name": "class",
-                    "defaultValue": "\"app-navigation-rail-item\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 37,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "class.app-navigation-rail-item-with-label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 47,
+                    "type": "NavigationRailItemLabelDirective",
                     "decorators": []
                 }
             ],
@@ -205,11 +319,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  HostBinding,\n  OnInit,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"app-navigation-rail-item\",\n  templateUrl: \"./navigation-rail-item.component.html\",\n  styleUrls: [\"./navigation-rail-item.component.scss\"],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class NavigationRailItemComponent implements OnInit {\n  @HostBinding(\"class\") hostClasses = \"app-navigation-rail-item\";\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  ContentChild,\n  Directive,\n  HostBinding,\n  OnInit,\n  ViewEncapsulation,\n} from \"@angular/core\";\n\n@Directive({\n  selector: \"[appNavigationRailItemIcon]\",\n})\nexport class NavigationRailItemIconDirective {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item__icon\";\n  }\n}\n\n@Directive({\n  selector: \"[appNavigationRailItemLabel]\",\n})\nexport class NavigationRailItemLabelDirective {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item__label\";\n  }\n}\n\n@Component({\n  selector: \"app-navigation-rail-item,[app-navigation-rail-item]\",\n  templateUrl: \"./navigation-rail-item.component.html\",\n  styleUrls: [\"./navigation-rail-item.component.scss\"],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  encapsulation: ViewEncapsulation.None,\n})\nexport class NavigationRailItemComponent implements OnInit {\n  @HostBinding(\"class\") get hostClasses() {\n    return \"app-navigation-rail-item\";\n  }\n\n  @ContentChild(NavigationRailItemIconDirective)\n  _icon?: NavigationRailItemIconDirective;\n\n  @ContentChild(NavigationRailItemLabelDirective)\n  _label?: NavigationRailItemLabelDirective;\n\n  @HostBinding(\"class.app-navigation-rail-item-with-label\") get labelClass() {\n    return this._label;\n  }\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": "$base-height: 72px;\r\n\r\n.app-navigation-rail-item {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  cursor: pointer;\r\n  outline: none;\r\n  height: $base-height;\r\n  width: 100%;\r\n\r\n  .app-navigation-rail-item__icon {\r\n    padding-top: 24px;\r\n    padding-bottom: 24px;\r\n  }\r\n\r\n  &.app-navigation-rail-item-with-label {\r\n    .app-navigation-rail-item__icon {\r\n      padding-top: 14px;\r\n      padding-bottom: 0;\r\n    }\r\n    .app-navigation-rail-item__label {\r\n      padding-top: 0;\r\n      padding-bottom: 16px;\r\n    }\r\n  }\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  color: inherit;\r\n}\r\n",
                     "styleUrl": "./navigation-rail-item.component.scss"
                 }
             ],
@@ -220,12 +334,66 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 15
+                "line": 49
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>navigation-rail-item works!</p>\n"
+            "accessors": {
+                "hostClasses": {
+                    "name": "hostClasses",
+                    "getSignature": {
+                        "name": "hostClasses",
+                        "type": "",
+                        "returnType": "",
+                        "line": 37
+                    }
+                },
+                "labelClass": {
+                    "name": "labelClass",
+                    "getSignature": {
+                        "name": "labelClass",
+                        "type": "",
+                        "returnType": "",
+                        "line": 47
+                    }
+                }
+            },
+            "templateData": "<ng-content select=\"[appNavigationRailItemIcon]\"></ng-content>\n<ng-content select=\"[appNavigationRailItemLabel]\"></ng-content>\n"
+        },
+        {
+            "name": "NavigationRailWrapperComponent",
+            "id": "component-NavigationRailWrapperComponent-c9ed5f055f94bbb8a2ac0fa96bc5b6760da3edd39515ecaea0a9cc06c3d3e10b040b19e1a29647123d1cea4866359406b85953a2fc1025829183024eff1d1aad",
+            "file": "src/app/navigation-rail/navigation-rail.component.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "provideRouter([])"
+                }
+            ],
+            "styleUrls": [],
+            "styles": [],
+            "template": "<app-navigation-rail>    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>home</mat-icon>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>schedule</mat-icon>\n      <span appNavigationRailItemLabel>Recent</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>folder</mat-icon>\n      <span appNavigationRailItemLabel>All Files</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>image</mat-icon>\n      <span appNavigationRailItemLabel>Images</span>\n    </a>\n  </app-navigation-rail>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { provideRouter, RouterModule } from \"@angular/router\";\nimport { Story, Meta, moduleMetadata } from \"@storybook/angular\";\nimport { NavigationRailModule } from \"./navigation-rail.module\";\nimport { NavigationRailComponent } from \"./navigation-rail.component\";\nimport { MatIconModule } from \"@angular/material/icon\";\n@Component({\n  template: `<app-navigation-rail>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>home</mat-icon>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>schedule</mat-icon>\n      <span appNavigationRailItemLabel>Recent</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>folder</mat-icon>\n      <span appNavigationRailItemLabel>All Files</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>image</mat-icon>\n      <span appNavigationRailItemLabel>Images</span>\n    </a>\n  </app-navigation-rail>`,\n  standalone: true,\n  imports: [NavigationRailModule, RouterModule, MatIconModule],\n  providers: [provideRouter([])],\n})\nclass NavigationRailWrapperComponent {}\n\n// More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export\nexport default {\n  title: \"Navigation Rail\",\n  component: NavigationRailComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [NavigationRailModule, RouterModule, MatIconModule],\n      providers: [provideRouter([])],\n    }),\n  ],\n  // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes\n  argTypes: {\n    backgroundColor: { control: \"color\" },\n  },\n} as Meta;\n\n// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args\nconst Template: Story<NavigationRailComponent> = (\n  args: NavigationRailComponent\n) => ({\n  props: args,\n  template: `<app-navigation-rail>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>home</mat-icon>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>schedule</mat-icon>\n      <span appNavigationRailItemLabel>Recent</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>folder</mat-icon>\n      <span appNavigationRailItemLabel>All Files</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>image</mat-icon>\n      <span appNavigationRailItemLabel>Images</span>\n    </a>\n  </app-navigation-rail>`,\n});\n\nexport const Primary = Template.bind({});\n// More on args: https://storybook.js.org/docs/angular/writing-stories/args\nPrimary.args = {};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
         }
     ],
     "modules": [
@@ -315,13 +483,13 @@
         },
         {
             "name": "NavigationRailModule",
-            "id": "module-NavigationRailModule-e63e547bb3a1fd32c96a047abc14848f426d0a2ede54e47a3b0d38299ac5f5e1c348e8300874f4bab3aea5ff09a89fdba00750599c7196b101d5c0280537c2f5",
+            "id": "module-NavigationRailModule-fd4c656250d17eb19f9a0d47c8bf8bcc49685fda05edc873a493f11e9c736edc806650d5bda278ab5e7efdc6ef2fc03318d94addd0b0ac9dce8b83cfdfa05791",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/navigation-rail/navigation-rail.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { NavigationRailComponent } from './navigation-rail.component';\nimport { NavigationRailItemComponent } from './navigation-rail-item.component';\n\n\n\n@NgModule({\n  declarations: [\n    NavigationRailComponent,\n    NavigationRailItemComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    NavigationRailComponent,\n    NavigationRailItemComponent\n  ]\n})\nexport class NavigationRailModule { }\n",
+            "sourceCode": "import { NgModule } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\nimport { NavigationRailComponent } from \"./navigation-rail.component\";\nimport {\n  NavigationRailItemComponent,\n  NavigationRailItemIconDirective,\n  NavigationRailItemLabelDirective,\n} from \"./navigation-rail-item.component\";\n\n@NgModule({\n  declarations: [\n    NavigationRailComponent,\n    NavigationRailItemComponent,\n    NavigationRailItemIconDirective,\n    NavigationRailItemLabelDirective,\n  ],\n  imports: [CommonModule],\n  exports: [\n    NavigationRailComponent,\n    NavigationRailItemComponent,\n    NavigationRailItemIconDirective,\n    NavigationRailItemLabelDirective,\n  ],\n})\nexport class NavigationRailModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -335,6 +503,12 @@
                         },
                         {
                             "name": "NavigationRailItemComponent"
+                        },
+                        {
+                            "name": "NavigationRailItemIconDirective"
+                        },
+                        {
+                            "name": "NavigationRailItemLabelDirective"
                         }
                     ]
                 },
@@ -350,6 +524,12 @@
                         },
                         {
                             "name": "NavigationRailItemComponent"
+                        },
+                        {
+                            "name": "NavigationRailItemIconDirective"
+                        },
+                        {
+                            "name": "NavigationRailItemLabelDirective"
                         }
                     ]
                 },
@@ -390,7 +570,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/navigation-rail/navigation-rail.stories.ts",
+                "file": "src/app/navigation-rail/navigation-rail.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -400,11 +580,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/navigation-rail/navigation-rail.stories.ts",
+                "file": "src/app/navigation-rail/navigation-rail.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<NavigationRailComponent>",
-                "defaultValue": "(\n  args: NavigationRailComponent\n) => ({\n  props: args,\n})"
+                "defaultValue": "(\n  args: NavigationRailComponent\n) => ({\n  props: args,\n  template: `<app-navigation-rail>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>home</mat-icon>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>schedule</mat-icon>\n      <span appNavigationRailItemLabel>Recent</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>folder</mat-icon>\n      <span appNavigationRailItemLabel>All Files</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>image</mat-icon>\n      <span appNavigationRailItemLabel>Images</span>\n    </a>\n  </app-navigation-rail>`,\n})"
             }
         ],
         "functions": [],
@@ -435,12 +615,12 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
-            "src/app/navigation-rail/navigation-rail.stories.ts": [
+            "src/app/navigation-rail/navigation-rail.component.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/navigation-rail/navigation-rail.stories.ts",
+                    "file": "src/app/navigation-rail/navigation-rail.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -450,11 +630,11 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/navigation-rail/navigation-rail.stories.ts",
+                    "file": "src/app/navigation-rail/navigation-rail.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<NavigationRailComponent>",
-                    "defaultValue": "(\n  args: NavigationRailComponent\n) => ({\n  props: args,\n})"
+                    "defaultValue": "(\n  args: NavigationRailComponent\n) => ({\n  props: args,\n  template: `<app-navigation-rail>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>home</mat-icon>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>schedule</mat-icon>\n      <span appNavigationRailItemLabel>Recent</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>folder</mat-icon>\n      <span appNavigationRailItemLabel>All Files</span>\n    </a>\n    <a app-navigation-rail-item routerLink=\"/\">\n      <mat-icon appNavigationRailItemIcon>image</mat-icon>\n      <span appNavigationRailItemLabel>Images</span>\n    </a>\n  </app-navigation-rail>`,\n})"
                 }
             ]
         },
@@ -495,20 +675,38 @@
                 "linktype": "component",
                 "name": "NavigationRailItemComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
-                "filePath": "src/app/navigation-rail/navigation-rail.component.ts",
+                "filePath": "src/app/navigation-rail/navigation-rail-item.component.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "NavigationRailItemIconDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/navigation-rail/navigation-rail-item.component.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "NavigationRailItemLabelDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/navigation-rail/navigation-rail.component.stories.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "NavigationRailComponent",
+                "name": "NavigationRailWrapperComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/navigation-rail/navigation-rail.stories.ts",
+                "filePath": "src/app/navigation-rail/navigation-rail.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -518,13 +716,22 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/navigation-rail/navigation-rail.stories.ts",
+                "filePath": "src/app/navigation-rail/navigation-rail.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/navigation-rail/navigation-rail.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavigationRailComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {

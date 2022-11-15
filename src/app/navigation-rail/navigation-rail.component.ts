@@ -3,6 +3,7 @@ import {
   Component,
   HostBinding,
   OnInit,
+  ViewEncapsulation,
 } from "@angular/core";
 
 @Component({
@@ -10,6 +11,7 @@ import {
   templateUrl: "./navigation-rail.component.html",
   styleUrls: ["./navigation-rail.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class NavigationRailComponent implements OnInit {
   @HostBinding("class") get hostClasses() {
