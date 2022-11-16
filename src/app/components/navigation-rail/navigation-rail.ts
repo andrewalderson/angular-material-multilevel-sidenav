@@ -28,8 +28,7 @@ export class NavigationRailItemLabelDirective {
 
 @Component({
   selector: "app-navigation-rail-item,[app-navigation-rail-item]",
-  templateUrl: "./navigation-rail-item.component.html",
-  styleUrls: ["./navigation-rail-item.component.scss"],
+  templateUrl: "./navigation-rail-item.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
@@ -48,6 +47,26 @@ export class NavigationRailItemComponent implements OnInit {
     return this._label;
   }
 
+  constructor() {}
+
+  ngOnInit(): void {}
+}
+
+@Component({
+  selector: "app-navigation-rail",
+  templateUrl: "./navigation-rail.html",
+  styleUrls: ["./navigation-rail.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+})
+export class NavigationRailComponent implements OnInit {
+  @HostBinding("class") get hostClasses() {
+    return "app-navigation-rail";
+  }
+
+  @HostBinding("attr.role") get role() {
+    return "navigation";
+  }
   constructor() {}
 
   ngOnInit(): void {}

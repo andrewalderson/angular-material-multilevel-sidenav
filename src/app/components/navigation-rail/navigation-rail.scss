@@ -1,7 +1,21 @@
+$base-width: 72px;
+$top-padding: 8px;
 $base-height: 72px;
 $default-icon-padding: 24px;
 $icon-top-padding: 14px;
 $label-bottom-padding: 16px;
+
+.app-navigation-rail {
+  display: block;
+  width: $base-width;
+  padding-top: $top-padding;
+  -webkit-tap-highlight-color: transparent;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
 
 .app-navigation-rail-item {
   display: flex;
@@ -28,9 +42,4 @@ $label-bottom-padding: 16px;
       padding-bottom: $label-bottom-padding;
     }
   }
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }

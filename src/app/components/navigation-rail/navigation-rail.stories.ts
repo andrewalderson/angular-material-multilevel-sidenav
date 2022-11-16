@@ -2,7 +2,7 @@
 import { Component } from "@angular/core";
 import { provideRouter, RouterModule } from "@angular/router";
 import { Story, Meta } from "@storybook/angular";
-import { NavigationRailModule } from "./navigation-rail.module";
+import { NavigationRailModule } from "./module";
 import { MatIconModule } from "@angular/material/icon";
 @Component({
   template: `<app-navigation-rail>

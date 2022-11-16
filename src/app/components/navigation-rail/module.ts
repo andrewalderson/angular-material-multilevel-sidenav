@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { NavigationRailComponent } from "./navigation-rail.component";
 import {
+  NavigationRailComponent,
   NavigationRailItemComponent,
   NavigationRailItemIconDirective,
   NavigationRailItemLabelDirective,
-} from "./navigation-rail-item.component";
+} from "./navigation-rail";
 
 @NgModule({
   declarations: [
