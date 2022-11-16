@@ -11,7 +11,7 @@ import {
 @Directive({
   selector: "[appNavigationRailItemIcon]",
 })
-export class NavigationRailItemIconDirective {
+export class NavigationRailItemIcon {
   @HostBinding("class") get hostClasses() {
     return "app-navigation-rail-item__icon";
   }
@@ -20,7 +20,7 @@ export class NavigationRailItemIconDirective {
 @Directive({
   selector: "[appNavigationRailItemLabel]",
 })
-export class NavigationRailItemLabelDirective {
+export class NavigationRailItemLabel {
   @HostBinding("class") get hostClasses() {
     return "app-navigation-rail-item__label";
   }
@@ -32,16 +32,16 @@ export class NavigationRailItemLabelDirective {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class NavigationRailItemComponent implements OnInit {
+export class NavigationRailItem implements OnInit {
   @HostBinding("class") get hostClasses() {
     return "app-navigation-rail-item";
   }
 
-  @ContentChild(NavigationRailItemIconDirective)
-  _icon?: NavigationRailItemIconDirective;
+  @ContentChild(NavigationRailItemIcon)
+  _icon?: NavigationRailItemIcon;
 
-  @ContentChild(NavigationRailItemLabelDirective)
-  _label?: NavigationRailItemLabelDirective;
+  @ContentChild(NavigationRailItemLabel)
+  _label?: NavigationRailItemLabel;
 
   @HostBinding("class.app-navigation-rail-item-with-label") get labelClass() {
     return this._label;
@@ -59,7 +59,7 @@ export class NavigationRailItemComponent implements OnInit {
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class NavigationRailComponent implements OnInit {
+export class NavigationRail implements OnInit {
   @HostBinding("class") get hostClasses() {
     return "app-navigation-rail";
   }
