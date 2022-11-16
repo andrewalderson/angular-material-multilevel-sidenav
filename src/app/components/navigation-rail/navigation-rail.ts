@@ -23,7 +23,7 @@ export class MatNavigationRailItemIcon {}
 export class MatNavigationRailItemLabel {}
 
 @Component({
-  selector: "mat-navigation-rail-item,[mat-navigation-rail-item]",
+  selector: "[mat-navigation-rail-item]",
   templateUrl: "./navigation-rail-item.html",
   host: {
     class: "mat-navigation-rail-item",
