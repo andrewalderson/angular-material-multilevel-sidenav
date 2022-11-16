@@ -9,41 +9,41 @@ import {
 } from "@angular/core";
 
 @Directive({
-  selector: "[appNavigationRailItemIcon]",
+  selector: "[matNavigationRailItemIcon]",
 })
-export class NavigationRailItemIcon {
+export class MatNavigationRailItemIcon {
   @HostBinding("class") get hostClasses() {
-    return "app-navigation-rail-item__icon";
+    return "mat-navigation-rail-item__icon";
   }
 }
 
 @Directive({
-  selector: "[appNavigationRailItemLabel]",
+  selector: "[matNavigationRailItemLabel]",
 })
-export class NavigationRailItemLabel {
+export class MatNavigationRailItemLabel {
   @HostBinding("class") get hostClasses() {
-    return "app-navigation-rail-item__label";
+    return "mat-navigation-rail-item__label";
   }
 }
 
 @Component({
-  selector: "app-navigation-rail-item,[app-navigation-rail-item]",
+  selector: "mat-navigation-rail-item,[mat-navigation-rail-item]",
   templateUrl: "./navigation-rail-item.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class NavigationRailItem implements OnInit {
+export class MatNavigationRailItem implements OnInit {
   @HostBinding("class") get hostClasses() {
-    return "app-navigation-rail-item";
+    return "mat-navigation-rail-item";
   }
 
-  @ContentChild(NavigationRailItemIcon)
-  _icon?: NavigationRailItemIcon;
+  @ContentChild(MatNavigationRailItemIcon)
+  _icon?: MatNavigationRailItemIcon;
 
-  @ContentChild(NavigationRailItemLabel)
-  _label?: NavigationRailItemLabel;
+  @ContentChild(MatNavigationRailItemLabel)
+  _label?: MatNavigationRailItemLabel;
 
-  @HostBinding("class.app-navigation-rail-item-with-label") get labelClass() {
+  @HostBinding("class.mat-navigation-rail-item-with-label") get labelClass() {
     return this._label;
   }
 
@@ -53,15 +53,15 @@ export class NavigationRailItem implements OnInit {
 }
 
 @Component({
-  selector: "app-navigation-rail",
+  selector: "mat-navigation-rail",
   templateUrl: "./navigation-rail.html",
   styleUrls: ["./navigation-rail.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
 })
-export class NavigationRail implements OnInit {
+export class MatNavigationRail implements OnInit {
   @HostBinding("class") get hostClasses() {
-    return "app-navigation-rail";
+    return "mat-navigation-rail";
   }
 
   @HostBinding("attr.role") get role() {

@@ -1,7 +1,7 @@
-export { NavigationRailModule } from "./module";
+export { MatNavigationRailModule } from "./module";
 export {
-  NavigationRail,
-  NavigationRailItem,
-  NavigationRailItemIcon,
-  NavigationRailItemLabel,
+  MatNavigationRail,
+  MatNavigationRailItem,
+  MatNavigationRailItemIcon,
+  MatNavigationRailItemLabel,
 } from "./navigation-rail";

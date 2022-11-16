@@ -5,7 +5,7 @@ $default-icon-padding: 24px;
 $icon-top-padding: 14px;
 $label-bottom-padding: 16px;
 
-.app-navigation-rail {
+.mat-navigation-rail {
   display: block;
   width: $base-width;
   padding-top: $top-padding;
@@ -17,7 +17,7 @@ $label-bottom-padding: 16px;
   }
 }
 
-.app-navigation-rail-item {
+.mat-navigation-rail-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,17 +27,17 @@ $label-bottom-padding: 16px;
   height: $base-height;
   width: 100%;
 
-  .app-navigation-rail-item__icon {
+  .mat-navigation-rail-item__icon {
     padding-top: $default-icon-padding;
     padding-bottom: $default-icon-padding;
   }
 
-  &.app-navigation-rail-item-with-label {
-    .app-navigation-rail-item__icon {
+  &.mat-navigation-rail-item-with-label {
+    .mat-navigation-rail-item__icon {
       padding-top: $icon-top-padding;
       padding-bottom: 0;
     }
-    .app-navigation-rail-item__label {
+    .mat-navigation-rail-item__label {
       padding-top: 0;
       padding-bottom: $label-bottom-padding;
     }

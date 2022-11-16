@@ -5,7 +5,7 @@
   $config: mat.get-color-config($config-or-theme);
   $foreground: map.get($config, foreground);
 
-  .app-navigation-rail-item {
+  .mat-navigation-rail-item {
     color: mat.get-color-from-palette($foreground, text);
   }
 }
@@ -13,7 +13,7 @@
 @mixin typography($config-or-theme) {
   $config: mat.get-color-config($config-or-theme);
 
-  .app-navigation-rail-item {
+  .mat-navigation-rail-item {
     font-family: mat.font-family($config);
     font-size: mat.font-size($config, button);
     font-weight: mat.font-weight($config, body-2);

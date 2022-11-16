@@ -1,25 +1,25 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {
-  NavigationRail,
-  NavigationRailItem,
-  NavigationRailItemIcon,
-  NavigationRailItemLabel,
+  MatNavigationRail,
+  MatNavigationRailItem,
+  MatNavigationRailItemIcon,
+  MatNavigationRailItemLabel,
 } from "./navigation-rail";
 
 @NgModule({
   declarations: [
-    NavigationRail,
-    NavigationRailItem,
-    NavigationRailItemIcon,
-    NavigationRailItemLabel,
+    MatNavigationRail,
+    MatNavigationRailItem,
+    MatNavigationRailItemIcon,
+    MatNavigationRailItemLabel,
   ],
   imports: [CommonModule],
   exports: [
-    NavigationRail,
-    NavigationRailItem,
-    NavigationRailItemIcon,
-    NavigationRailItemLabel,
+    MatNavigationRail,
+    MatNavigationRailItem,
+    MatNavigationRailItemIcon,
+    MatNavigationRailItemLabel,
   ],
 })
-export class NavigationRailModule {}
+export class MatNavigationRailModule {}

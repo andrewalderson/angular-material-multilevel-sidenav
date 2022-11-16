@@ -2,28 +2,28 @@
 import { Component } from "@angular/core";
 import { provideRouter, RouterModule } from "@angular/router";
 import { Story, Meta } from "@storybook/angular";
-import { NavigationRailModule } from "./module";
+import { MatNavigationRailModule } from "./module";
 import { MatIconModule } from "@angular/material/icon";
 @Component({
-  template: `<app-navigation-rail>
-    <a app-navigation-rail-item routerLink="/">
-      <mat-icon appNavigationRailItemIcon>home</mat-icon>
+  template: `<mat-navigation-rail>
+    <a mat-navigation-rail-item routerLink="/">
+      <mat-icon matNavigationRailItemIcon>home</mat-icon>
     </a>
-    <a app-navigation-rail-item routerLink="/">
-      <mat-icon appNavigationRailItemIcon>schedule</mat-icon>
-      <span appNavigationRailItemLabel>Recent</span>
+    <a mat-navigation-rail-item routerLink="/">
+      <mat-icon matNavigationRailItemIcon>schedule</mat-icon>
+      <span matNavigationRailItemLabel>Recent</span>
     </a>
-    <a app-navigation-rail-item routerLink="/">
-      <mat-icon appNavigationRailItemIcon>folder</mat-icon>
-      <span appNavigationRailItemLabel>All Files</span>
+    <a mat-navigation-rail-item routerLink="/">
+      <mat-icon matNavigationRailItemIcon>folder</mat-icon>
+      <span matNavigationRailItemLabel>All Files</span>
     </a>
-    <a app-navigation-rail-item routerLink="/">
-      <mat-icon appNavigationRailItemIcon>image</mat-icon>
-      <span appNavigationRailItemLabel>Images</span>
+    <a mat-navigation-rail-item routerLink="/">
+      <mat-icon matNavigationRailItemIcon>image</mat-icon>
+      <span matNavigationRailItemLabel>Images</span>
     </a>
-  </app-navigation-rail>`,
+  </mat-navigation-rail>`,
   standalone: true,
-  imports: [NavigationRailModule, RouterModule, MatIconModule],
+  imports: [MatNavigationRailModule, RouterModule, MatIconModule],
   providers: [provideRouter([])],
 })
 class NavigationRailWrapperComponent {}
