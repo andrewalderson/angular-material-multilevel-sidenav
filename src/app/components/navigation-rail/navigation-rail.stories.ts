@@ -25,6 +25,15 @@ import { MatIconModule } from "@angular/material/icon";
   standalone: true,
   imports: [MatNavigationRailModule, RouterModule, MatIconModule],
   providers: [provideRouter([])],
+  styles: [
+    `
+      :host {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+    `,
+  ],
 })
 class NavigationRailWrapperComponent {}
 
@@ -35,6 +44,9 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
+  },
+  parameters: {
+    layout: "fullscreen",
   },
 } as Meta;
 
