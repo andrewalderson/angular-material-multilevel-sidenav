@@ -4,9 +4,47 @@
 @mixin color($config-or-theme) {
   $config: mat.get-color-config($config-or-theme);
   $foreground: map.get($config, foreground);
+  $background: map.get($config, background);
+  $primary: map.get($config, primary);
+  $accent: map.get($config, accent);
+  $warn: map.get($config, warn);
 
   .mat-navigation-rail-item {
     color: mat.get-color-from-palette($foreground, text);
+
+    &.mat-navigation-rail-item--disabled {
+      color: mat.get-color-from-palette($foreground, disabled-text);
+    }
+
+    &.mat-navigation-rail-item--active {
+      color: mat.get-color-from-palette($foreground, disabled-text);
+    }
+
+    &:hover,
+    &:focus {
+      .mat-navigation-rail-item__content {
+        background: mat.get-color-from-palette($background, "hover");
+      }
+    }
+  }
+
+  .mat-navigation-rail {
+    $theme-colors: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    );
+
+    @each $name, $color in $theme-colors {
+      &.mat-#{$name} {
+        .mat-navigation-rail-item--active {
+          color: mat.get-color-from-palette($color);
+          .mat-navigation-rail-item__content {
+            background: initial;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -16,7 +54,7 @@
   .mat-navigation-rail-item {
     font-family: mat.font-family($config);
     font-size: mat.font-size($config, button);
-    font-weight: mat.font-weight($config, body-2);
+    font-weight: mat.font-weight($config, button);
   }
 }
 

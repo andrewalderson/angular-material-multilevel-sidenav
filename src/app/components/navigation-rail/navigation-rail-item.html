@@ -1,2 +1,10 @@
-<ng-content select="[matNavigationRailItemIcon]"></ng-content>
-<ng-content select="[matNavigationRailItemLabel]"></ng-content>
+<div
+  class="mat-navigation-rail-item__ripple"
+  mat-ripple
+  [matRippleTrigger]="elementRef.nativeElement"
+  [matRippleDisabled]="rippleDisabled"
+></div>
+<div class="mat-navigation-rail-item__content">
+  <ng-content select="[matNavigationRailItemIcon]"></ng-content>
+  <ng-content select="[matNavigationRailItemLabel]"></ng-content>
+</div>

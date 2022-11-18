@@ -11,22 +11,32 @@ $label-bottom-padding: 16px;
   height: 100%;
   padding-top: $top-padding;
   -webkit-tap-highlight-color: transparent;
+  border-radius: 50%;
 
   a {
     text-decoration: none;
-    color: inherit;
   }
 }
 
 .mat-navigation-rail-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
   cursor: pointer;
   outline: none;
   height: $base-height;
   width: 100%;
+  border-radius: 50%;
+
+  &.mat-navigation-rail-item--disabled {
+    pointer-events: none;
+  }
+
+  .mat-navigation-rail-item__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+  }
 
   .mat-navigation-rail-item__icon {
     padding-top: $default-icon-padding;
@@ -43,4 +53,18 @@ $label-bottom-padding: 16px;
       padding-bottom: $label-bottom-padding;
     }
   }
+}
+
+.mat-navigation-rail-item__ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.mat-navigation-rail-item__ripple,
+.mat-navigation-rail-item__content {
+  border-radius: inherit;
 }

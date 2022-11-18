@@ -6,6 +6,7 @@ import {
   MatNavigationRailItemIcon,
   MatNavigationRailItemLabel,
 } from "./navigation-rail";
+import { MatRippleModule } from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import {
     MatNavigationRailItemIcon,
     MatNavigationRailItemLabel,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, MatRippleModule],
   exports: [
     MatNavigationRail,
     MatNavigationRailItem,
