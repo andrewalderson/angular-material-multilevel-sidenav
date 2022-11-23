@@ -53,7 +53,7 @@
 
   .mat-navigation-rail-item {
     font-family: mat.font-family($config);
-    font-size: mat.font-size($config, button);
+    font-size: mat.font-size($config, caption);
     font-weight: mat.font-weight($config, button);
   }
 }
