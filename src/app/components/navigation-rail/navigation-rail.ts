@@ -7,6 +7,7 @@ import {
   Directive,
   ElementRef,
   Inject,
+  InjectionToken,
   Input,
   Optional,
   ViewEncapsulation,
@@ -17,6 +18,10 @@ import {
   RippleGlobalOptions,
   ThemePalette,
 } from "@angular/material/core";
+
+export const MAT_NAVIGATION_RAIL = new InjectionToken<string>(
+  "MAT_NAVIGATION_RAIL"
+);
 
 @Directive({
   selector: "[matNavigationRailItemIcon]",
@@ -96,7 +101,7 @@ export class MatNavigationRailItem {
 
   constructor(
     readonly elementRef: ElementRef<HTMLElement>,
-    private _navigationRail: MatNavigationRail,
+    @Inject(MAT_NAVIGATION_RAIL) private _navigationRail: MatNavigationRail,
     @Optional()
     @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)
     globalRippleOptions: RippleGlobalOptions | null,
@@ -125,6 +130,7 @@ export class MatNavigationRailItem {
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
+  providers: [{ provide: MAT_NAVIGATION_RAIL, useExisting: MatNavigationRail }],
 })
 export class MatNavigationRail {
   @Input() color: ThemePalette = "primary";
