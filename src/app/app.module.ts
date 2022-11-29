@@ -12,7 +12,13 @@ import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { CdkAccordionModule } from "@angular/cdk/accordion";
-import { DrawerNavigationItemComponent } from './navigation/drawer-navigation-item.component';
+import { DrawerNavigationItemComponent } from "./navigation/drawer-navigation-item.component";
+import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
+import { LayoutEffects } from "./state/layout.effects";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { metaReducers, ROOT_REDUCERS } from "./state";
+import { environment } from "src/environments/environment";
 
 @NgModule({
   declarations: [AppComponent, BlankPage, DrawerNavigationItemComponent],
@@ -27,6 +33,14 @@ import { DrawerNavigationItemComponent } from './navigation/drawer-navigation-it
     MatToolbarModule,
     MatButtonModule,
     CdkAccordionModule,
+    StoreModule.forRoot(ROOT_REDUCERS, {
+      metaReducers,
+    }),
+    EffectsModule.forRoot([LayoutEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

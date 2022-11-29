@@ -1,4 +1,4 @@
-<mat-navigation-rail *ngIf="!isSmallScreen">
+<mat-navigation-rail *ngIf="!(isSmallScreen$ | async)">
   <ng-container *ngFor="let item of navigation">
     <a
       *ngIf="!item.isExternal"
@@ -9,7 +9,7 @@
       routerLinkActive
       ariaCurrentWhenActive="page"
       [routerLinkActiveOptions]="{ exact: !!item.exactMatch }"
-      [attr.aria-expanded]="isOpened"
+      [attr.aria-expanded]="currentSection === item && (showSideNav$ | async)"
       [attr.aria-label]="item.label"
       [attr.role]="item.children?.length ? 'button' : 'link'"
       aria-controls="navigationDrawer"
@@ -37,17 +37,20 @@
 <mat-sidenav-container>
   <mat-sidenav
     #navigationDrawer
-    [opened]="isOpened"
+    [opened]="showSideNav$ | async"
     (mouseleave)="closeNavigationDrawer()"
   >
     <div class="drawer-content">
-      <mat-toolbar *ngIf="isSmallScreen" class="drawer-content__toolbar">
+      <mat-toolbar
+        *ngIf="isSmallScreen$ | async"
+        class="drawer-content__toolbar"
+      >
         <button mat-icon-button (click)="toggleNavigationDrawer()">
           <mat-icon>menu_open</mat-icon>
         </button>
       </mat-toolbar>
       <mat-nav-list class="drawer-content__navigation">
-        <ng-container *ngIf="isSmallScreen">
+        <ng-container *ngIf="isSmallScreen$ | async">
           <div
             *ngIf="isTopLevelContent"
             @fadeInOutTopLevel
@@ -102,7 +105,7 @@
             </div>
           </div>
         </ng-container>
-        <ng-container *ngIf="!isSmallScreen">
+        <ng-container *ngIf="!(isSmallScreen$ | async)">
           <ng-container *ngIf="currentSection">
             <ng-container *ngFor="let item of currentSection.children">
               <app-drawer-navigation-item [navigationItem]="item" @fadeInOut>
@@ -114,7 +117,7 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar *ngIf="isSmallScreen">
+    <mat-toolbar *ngIf="isSmallScreen$ | async">
       <button mat-icon-button (click)="toggleNavigationDrawer()">
         <mat-icon>menu</mat-icon>
       </button>

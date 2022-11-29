@@ -1,15 +1,11 @@
 import { Component, OnDestroy } from "@angular/core";
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from "@angular/animations";
-import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
-import { Subject, takeUntil, map, filter, take } from "rxjs";
+import { trigger, style, transition, animate } from "@angular/animations";
+import { Subject, filter, take, shareReplay } from "rxjs";
 import { navigation, NavigationItem } from "./navigation.data";
 import { Router, RouterEvent, NavigationEnd } from "@angular/router";
+import { select, Store } from "@ngrx/store";
+import * as fromLayout from "./state";
+import * as LayoutActions from "./state/layout.actions";
 
 @Component({
   selector: "app-root",
@@ -72,15 +68,16 @@ import { Router, RouterEvent, NavigationEnd } from "@angular/router";
     ]),
   ],
 })
-export class AppComponent implements OnDestroy {
-  private _destroyed = new Subject<void>();
+export class AppComponent {
+  isSmallScreen$ = this.store.pipe(
+    select(fromLayout.selectIsSmallScreen),
+    shareReplay()
+  );
 
-  get isSmallScreen() {
-    return this._isSmallScreen;
-  }
-  private _isSmallScreen = false;
-
-  isOpened = false;
+  showSideNav$ = this.store.pipe(
+    select(fromLayout.selectShowSidenav),
+    shareReplay()
+  );
 
   currentSection?: NavigationItem | null;
 
@@ -90,20 +87,7 @@ export class AppComponent implements OnDestroy {
     return navigation;
   }
 
-  constructor(
-    private breakpointObserver: BreakpointObserver,
-    private router: Router
-  ) {
-    this.breakpointObserver
-      .observe([Breakpoints.XSmall, Breakpoints.Small])
-      .pipe(
-        takeUntil(this._destroyed),
-        map((result) => {
-          this._isSmallScreen = result.matches;
-        })
-      )
-      .subscribe();
-
+  constructor(private router: Router, private store: Store) {
     this.router.events
       .pipe(
         filter((e): e is RouterEvent => e instanceof NavigationEnd),
@@ -120,22 +104,22 @@ export class AppComponent implements OnDestroy {
       });
   }
 
-  ngOnDestroy(): void {
-    this._destroyed.next();
-    this._destroyed.complete();
-  }
-
   openNavigationDrawer(item: any) {
     this.currentSection = item;
-    this.isOpened = item.children?.length > 0;
+
+    if (item.children?.length > 0) {
+      this.store.dispatch(LayoutActions.openSidenav());
+    } else {
+      this.closeNavigationDrawer();
+    }
   }
 
   closeNavigationDrawer() {
-    this.isOpened = false;
+    this.store.dispatch(LayoutActions.closeSidenav());
   }
 
   toggleNavigationDrawer() {
-    this.isOpened = !this.isOpened;
+    this.store.dispatch(LayoutActions.toggleSidenav());
   }
 
   forward(item: any) {
