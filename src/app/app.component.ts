@@ -82,9 +82,7 @@ export class AppComponent implements OnDestroy {
 
   isOpened = false;
 
-  currentSection: any;
-
-  currentItem?: NavigationItem;
+  currentSection?: NavigationItem | null;
 
   isTopLevelContent = true;
 
@@ -129,7 +127,7 @@ export class AppComponent implements OnDestroy {
 
   openNavigationDrawer(item: any, event: Event) {
     this.currentSection = item;
-    this.isOpened = this.currentSection.children?.length > 0;
+    this.isOpened = item.children?.length > 0;
   }
 
   closeNavigationDrawer(event: Event) {
