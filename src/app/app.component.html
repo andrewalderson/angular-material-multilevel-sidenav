@@ -9,10 +9,14 @@
       routerLinkActive
       ariaCurrentWhenActive="page"
       [routerLinkActiveOptions]="{ exact: !!item.exactMatch }"
-      [attr.aria-expanded]="currentSection === item && (showSideNav$ | async)"
+      [attr.aria-expanded]="
+        item.children?.length
+          ? currentSection === item && (showSideNav$ | async)
+          : null
+      "
       [attr.aria-label]="item.label"
       [attr.role]="item.children?.length ? 'button' : 'link'"
-      aria-controls="navigationDrawer"
+      [attr.aria-controls]="item.children?.length ? 'navigationDrawer' : null"
       (mouseenter)="openNavigationDrawer(item)"
       (focus)="openNavigationDrawer(item)"
     >
@@ -25,7 +29,6 @@
       [href]="item.link"
       target="_blank"
       [attr.aria-label]="item.label"
-      role="link"
       (mouseenter)="openNavigationDrawer(item)"
       (focus)="openNavigationDrawer(item)"
     >
@@ -36,9 +39,10 @@
 </mat-navigation-rail>
 <mat-sidenav-container>
   <mat-sidenav
-    #navigationDrawer
     [opened]="showSideNav$ | async"
     (mouseleave)="closeNavigationDrawer()"
+    (closed)="closeNavigationDrawer()"
+    id="navigationDrawer"
   >
     <div class="drawer-content">
       <mat-toolbar
@@ -60,6 +64,7 @@
               <mat-list-item
                 *ngIf="item.children?.length"
                 role="button"
+                tabindex="0"
                 (click)="forward(item)"
                 (keydown.enter)="forward(item)"
                 [class.active]="isLinkActive(item.link)"
@@ -94,7 +99,11 @@
           </div>
           <div *ngIf="!isTopLevelContent" @fadeInOutSubsection>
             <div *ngIf="currentSection" class="list-items-wrapper">
-              <mat-list-item (click)="back()">
+              <mat-list-item
+                (click)="back()"
+                (keydown.enter)="back()"
+                tabindex="0"
+              >
                 <mat-icon matListIcon>arrow_back</mat-icon>
                 <span matLine>Main Menu</span>
               </mat-list-item>
