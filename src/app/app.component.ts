@@ -125,21 +125,25 @@ export class AppComponent implements OnDestroy {
     this._destroyed.complete();
   }
 
-  openNavigationDrawer(item: any, event: Event) {
+  openNavigationDrawer(item: any) {
     this.currentSection = item;
     this.isOpened = item.children?.length > 0;
   }
 
-  closeNavigationDrawer(event: Event) {
+  closeNavigationDrawer() {
     this.isOpened = false;
   }
 
-  forward(item: any, event: Event) {
+  toggleNavigationDrawer() {
+    this.isOpened = !this.isOpened;
+  }
+
+  forward(item: any) {
     this.isTopLevelContent = false;
     this.currentSection = item;
   }
 
-  back(event: Event) {
+  back() {
     this.currentSection = null;
     this.isTopLevelContent = true;
   }

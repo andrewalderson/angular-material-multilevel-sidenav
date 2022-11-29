@@ -13,8 +13,8 @@
       [attr.aria-label]="item.label"
       [attr.role]="item.children?.length ? 'button' : 'link'"
       aria-controls="navigationDrawer"
-      (mouseenter)="openNavigationDrawer(item, $event)"
-      (focus)="openNavigationDrawer(item, $event)"
+      (mouseenter)="openNavigationDrawer(item)"
+      (focus)="openNavigationDrawer(item)"
     >
       <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>
       <span matNavigationRailItemLabel>{{ item.label }}</span>
@@ -26,8 +26,8 @@
       target="_blank"
       [attr.aria-label]="item.label"
       role="link"
-      (mouseenter)="openNavigationDrawer(item, $event)"
-      (focus)="openNavigationDrawer(item, $event)"
+      (mouseenter)="openNavigationDrawer(item)"
+      (focus)="openNavigationDrawer(item)"
     >
       <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>
       <span matNavigationRailItemLabel>{{ item.label }}</span>
@@ -38,11 +38,11 @@
   <mat-sidenav
     #navigationDrawer
     [opened]="isOpened"
-    (mouseleave)="closeNavigationDrawer($event)"
+    (mouseleave)="closeNavigationDrawer()"
   >
     <div class="drawer-content">
       <mat-toolbar *ngIf="isSmallScreen" class="drawer-content__toolbar">
-        <button mat-icon-button (click)="navigationDrawer.toggle()">
+        <button mat-icon-button (click)="toggleNavigationDrawer()">
           <mat-icon>menu_open</mat-icon>
         </button>
       </mat-toolbar>
@@ -57,8 +57,8 @@
               <mat-list-item
                 *ngIf="item.children?.length"
                 role="button"
-                (click)="forward(item, $event)"
-                (keydown.enter)="forward(item, $event)"
+                (click)="forward(item)"
+                (keydown.enter)="forward(item)"
                 [class.active]="isLinkActive(item.link)"
                 [attr.aria-label]="item.label"
               >
@@ -82,7 +82,7 @@
                 [href]="item.link"
                 target="_blank"
                 [attr.aria-label]="item.label"
-                (click)="closeNavigationDrawer($event)"
+                (click)="closeNavigationDrawer()"
               >
                 <mat-icon matListIcon>{{ item.icon }}</mat-icon>
                 <span matLine>{{ item.label }}</span>
@@ -91,7 +91,7 @@
           </div>
           <div *ngIf="!isTopLevelContent" @fadeInOutSubsection>
             <div *ngIf="currentSection" class="list-items-wrapper">
-              <mat-list-item (click)="back($event)">
+              <mat-list-item (click)="back()">
                 <mat-icon matListIcon>arrow_back</mat-icon>
                 <span matLine>Main Menu</span>
               </mat-list-item>
@@ -115,7 +115,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar *ngIf="isSmallScreen">
-      <button mat-icon-button (click)="navigationDrawer.toggle()">
+      <button mat-icon-button (click)="toggleNavigationDrawer()">
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
