@@ -2,7 +2,7 @@ export interface NavigationItem {
   label: string;
   icon?: string;
   link: string;
-  children?: NavigationItem[];
+  children?: Pick<NavigationItem, "label" | "link" | "exactMatch">[];
   isExternal?: boolean;
   exactMatch?: boolean;
 }
