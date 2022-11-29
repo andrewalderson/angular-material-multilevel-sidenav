@@ -19,6 +19,7 @@ import { LayoutEffects } from "./state/layout.effects";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { metaReducers, ROOT_REDUCERS } from "./state";
 import { environment } from "src/environments/environment";
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [AppComponent, BlankPage, DrawerNavigationItemComponent],
@@ -32,6 +33,7 @@ import { environment } from "src/environments/environment";
     MatListModule,
     MatToolbarModule,
     MatButtonModule,
+    MatDividerModule,
     CdkAccordionModule,
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,

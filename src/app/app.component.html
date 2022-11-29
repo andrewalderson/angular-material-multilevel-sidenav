@@ -1,7 +1,22 @@
-<mat-navigation-rail *ngIf="!(isSmallScreen$ | async)">
+<nav
+  mat-navigation-rail
+  *ngIf="!(isSmallScreen$ | async)"
+  aria-label="Main Navigation"
+>
   <ng-container *ngFor="let item of navigation">
+    <button
+      *ngIf="!item.isExternal && item.children?.length"
+      mat-navigation-rail-item
+      [active]="isLinkActive(item.link)"
+      aria-controls="navigationDrawer"
+      [attr.aria-expanded]="currentSection === item && (showSideNav$ | async)"
+      (click)="openNavigationDrawer(item)"
+    >
+      <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>
+      <span matNavigationRailItemLabel>{{ item.label }}</span>
+    </button>
     <a
-      *ngIf="!item.isExternal"
+      *ngIf="!item.isExternal && !item.children?.length"
       mat-navigation-rail-item
       [routerLink]="item.link"
       #link="routerLinkActive"
@@ -9,16 +24,8 @@
       routerLinkActive
       ariaCurrentWhenActive="page"
       [routerLinkActiveOptions]="{ exact: !!item.exactMatch }"
-      [attr.aria-expanded]="
-        item.children?.length
-          ? currentSection === item && (showSideNav$ | async)
-          : null
-      "
-      [attr.aria-label]="item.label"
-      [attr.role]="item.children?.length ? 'button' : 'link'"
-      [attr.aria-controls]="item.children?.length ? 'navigationDrawer' : null"
-      (mouseenter)="openNavigationDrawer(item)"
-      (focus)="openNavigationDrawer(item)"
+      (mouseenter)="closeNavigationDrawer()"
+      (focus)="closeNavigationDrawer()"
     >
       <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>
       <span matNavigationRailItemLabel>{{ item.label }}</span>
@@ -28,32 +35,46 @@
       mat-navigation-rail-item
       [href]="item.link"
       target="_blank"
-      [attr.aria-label]="item.label"
-      (mouseenter)="openNavigationDrawer(item)"
-      (focus)="openNavigationDrawer(item)"
+      (mouseenter)="closeNavigationDrawer()"
+      (focus)="closeNavigationDrawer()"
     >
       <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>
       <span matNavigationRailItemLabel>{{ item.label }}</span>
     </a>
   </ng-container>
-</mat-navigation-rail>
+</nav>
+<mat-divider
+  *ngIf="!(isSmallScreen$ | async)"
+  vertical="true"
+  [@booleanFadeInOut]="showSideNav$ | async"
+></mat-divider>
 <mat-sidenav-container>
   <mat-sidenav
     [opened]="showSideNav$ | async"
-    (mouseleave)="closeNavigationDrawer()"
     (closed)="closeNavigationDrawer()"
-    id="navigationDrawer"
   >
     <div class="drawer-content">
       <mat-toolbar
         *ngIf="isSmallScreen$ | async"
         class="drawer-content__toolbar"
       >
-        <button mat-icon-button (click)="toggleNavigationDrawer()">
+        <button
+          mat-icon-button
+          (click)="toggleNavigationDrawer()"
+          [attr.aria-label]="
+            (showSideNav$ | async)
+              ? 'Close Navigation Drawer'
+              : 'Open Navigation Drawer'
+          "
+        >
           <mat-icon>menu_open</mat-icon>
         </button>
       </mat-toolbar>
-      <mat-nav-list class="drawer-content__navigation">
+      <mat-nav-list
+        class="drawer-content__navigation"
+        aria-label="Navigation Drawer"
+        id="navigationDrawer"
+      >
         <ng-container *ngIf="isSmallScreen$ | async">
           <div
             *ngIf="isTopLevelContent"
@@ -61,19 +82,16 @@
             class="list-items-wrapper"
           >
             <ng-container *ngFor="let item of navigation">
-              <mat-list-item
+              <button
+                mat-list-item
                 *ngIf="item.children?.length"
-                role="button"
-                tabindex="0"
                 (click)="forward(item)"
-                (keydown.enter)="forward(item)"
                 [class.active]="isLinkActive(item.link)"
-                [attr.aria-label]="item.label"
               >
                 <mat-icon matListIcon>{{ item.icon }}</mat-icon>
                 <span matLine>{{ item.label }}</span>
                 <mat-icon>arrow_forward</mat-icon>
-              </mat-list-item>
+              </button>
               <a
                 *ngIf="!item.isExternal && !item.children?.length"
                 mat-list-item
@@ -89,7 +107,6 @@
                 mat-list-item
                 [href]="item.link"
                 target="_blank"
-                [attr.aria-label]="item.label"
                 (click)="closeNavigationDrawer()"
               >
                 <mat-icon matListIcon>{{ item.icon }}</mat-icon>
@@ -99,16 +116,19 @@
           </div>
           <div *ngIf="!isTopLevelContent" @fadeInOutSubsection>
             <div *ngIf="currentSection" class="list-items-wrapper">
-              <mat-list-item
+              <button
+                mat-list-item
                 (click)="back()"
-                (keydown.enter)="back()"
-                tabindex="0"
+                aria-label="Back to Main Menu"
               >
                 <mat-icon matListIcon>arrow_back</mat-icon>
                 <span matLine>Main Menu</span>
-              </mat-list-item>
+              </button>
               <ng-container *ngFor="let item of currentSection.children">
-                <app-drawer-navigation-item [navigationItem]="item" @fadeInOut>
+                <app-drawer-navigation-item
+                  [navigationItem]="item"
+                  @fadeInOutNavItem
+                >
                 </app-drawer-navigation-item>
               </ng-container>
             </div>
@@ -117,7 +137,10 @@
         <ng-container *ngIf="!(isSmallScreen$ | async)">
           <ng-container *ngIf="currentSection">
             <ng-container *ngFor="let item of currentSection.children">
-              <app-drawer-navigation-item [navigationItem]="item" @fadeInOut>
+              <app-drawer-navigation-item
+                [navigationItem]="item"
+                @fadeInOutNavItem
+              >
               </app-drawer-navigation-item>
             </ng-container>
           </ng-container>
@@ -127,7 +150,15 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar *ngIf="isSmallScreen$ | async">
-      <button mat-icon-button (click)="toggleNavigationDrawer()">
+      <button
+        mat-icon-button
+        (click)="toggleNavigationDrawer()"
+        [attr.aria-label]="
+          (showSideNav$ | async)
+            ? 'Close Navigation Drawer'
+            : 'Open Navigation Drawer'
+        "
+      >
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>

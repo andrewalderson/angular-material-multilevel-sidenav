@@ -3,8 +3,10 @@
   width: 100%;
   height: 100%;
 }
-mat-navigation-rail {
+nav[mat-navigation-rail] {
   flex: 0;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .mat-drawer-container {
   flex: 1;

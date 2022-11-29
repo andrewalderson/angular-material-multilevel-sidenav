@@ -7,10 +7,8 @@ $label-bottom-padding: 16px;
 
 .mat-navigation-rail {
   display: block;
-  width: $base-width;
   padding-top: $top-padding;
   -webkit-tap-highlight-color: transparent;
-  border-radius: 50%;
 
   a {
     text-decoration: none;
@@ -22,7 +20,7 @@ $label-bottom-padding: 16px;
   cursor: pointer;
   outline: none;
   height: $base-height;
-  width: 100%;
+  width: $base-width;
   border-radius: 50%;
 
   &.mat-navigation-rail-item--disabled {
@@ -66,4 +64,23 @@ $label-bottom-padding: 16px;
 .mat-navigation-rail-item__ripple,
 .mat-navigation-rail-item__content {
   border-radius: inherit;
+}
+
+button.mat-navigation-rail-item {
+  padding: 0;
+  width: 100%;
+  background: none;
+  color: inherit;
+  border: none;
+  outline: inherit;
+  -webkit-tap-highlight-color: transparent;
+  text-align: left;
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
 }

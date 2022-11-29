@@ -40,7 +40,8 @@ export class MatNavigationRailItemIcon {}
 export class MatNavigationRailItemLabel {}
 
 @Component({
-  selector: "[mat-navigation-rail-item]",
+  selector:
+    "mat-navigation-rail-item, a[mat-navigation-rail-item], button[mat-navigation-rail-item]",
   templateUrl: "./navigation-rail-item.html",
   host: {
     class: "mat-navigation-rail-item",
@@ -112,16 +113,24 @@ export class MatNavigationRailItem {
     if (animationMode === "NoopAnimations") {
       this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };
     }
+
+    // doing this for compatibility with mat-list-item
+    const hostElement = elementRef.nativeElement;
+    if (
+      hostElement.nodeName.toLowerCase() === "button" &&
+      !hostElement.hasAttribute("type")
+    ) {
+      hostElement.setAttribute("type", "button");
+    }
   }
 }
 
 @Component({
-  selector: "mat-navigation-rail",
+  selector: "nav[mat-navigation-rail]",
   templateUrl: "./navigation-rail.html",
   styleUrls: ["./navigation-rail.scss"],
   host: {
     class: "mat-navigation-rail",
-    role: "navigation",
     "[class._mat-animation-noopable]": '_animationMode === "NoopAnimations"',
     "[class.mat-primary]": 'color !== "warn" && color !== "accent"',
     "[class.mat-accent]": 'color === "accent"',
