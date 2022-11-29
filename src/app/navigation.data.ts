@@ -4,13 +4,15 @@ export interface NavigationItem {
   link: string;
   children?: NavigationItem[];
   isExternal?: boolean;
+  exactMatch?: boolean;
 }
 
 export const navigation = [
   {
     label: "Home",
     icon: "home",
-    link: "/home",
+    link: "",
+    exactMatch: true,
   },
   {
     label: "Get Started",
@@ -25,6 +27,7 @@ export const navigation = [
       {
         label: "Develop Overview",
         link: "/develop",
+        exactMatch: true,
       },
       {
         label: "Android",
@@ -58,6 +61,7 @@ export const navigation = [
       {
         label: "Foundations Overview",
         link: "/foundations",
+        exactMatch: true,
       },
       {
         label: "Accessibility",
@@ -68,7 +72,7 @@ export const navigation = [
         link: "/foundations/adaptive-design",
         children: [
           {
-            label: "Adaptive Design",
+            label: "Overview",
             link: "/foundations/adaptive-design/overview",
           },
           {
@@ -99,7 +103,7 @@ export const navigation = [
       },
       {
         label: "Material A-Z",
-        link: "glossary",
+        link: "/foundations/glossary",
       },
     ],
   },
@@ -111,6 +115,7 @@ export const navigation = [
       {
         label: "Styles overview",
         link: "/styles",
+        exactMatch: true,
       },
       {
         label: "Color",
@@ -174,6 +179,7 @@ export const navigation = [
       {
         label: "Components overview",
         link: "/components",
+        exactMatch: true,
       },
       {
         label: "Badges",

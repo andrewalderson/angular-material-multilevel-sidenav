@@ -1,1 +1,220 @@
-<p>app works!</p>
+<mat-navigation-rail *ngIf="!isSmallScreen">
+  <ng-container *ngFor="let item of navigation">
+    <a
+      *ngIf="!item.isExternal"
+      mat-navigation-rail-item
+      [routerLink]="item.link"
+      #link="routerLinkActive"
+      [active]="link.isActive"
+      routerLinkActive
+      ariaCurrentWhenActive="page"
+      [routerLinkActiveOptions]="{ exact: !!item.exactMatch }"
+      [attr.aria-expanded]="isOpened"
+      [attr.aria-label]="item.label"
+      [attr.role]="item.children?.length ? 'button' : 'link'"
+      aria-controls="navigationDrawer"
+      (mouseenter)="openNavigationDrawer(item, $event)"
+      (focus)="openNavigationDrawer(item, $event)"
+    >
+      <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>
+      <span matNavigationRailItemLabel>{{ item.label }}</span>
+    </a>
+    <a
+      *ngIf="item.isExternal"
+      mat-navigation-rail-item
+      [href]="item.link"
+      target="_blank"
+      [attr.aria-label]="item.label"
+      role="link"
+      (mouseenter)="openNavigationDrawer(item, $event)"
+      (focus)="openNavigationDrawer(item, $event)"
+    >
+      <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>
+      <span matNavigationRailItemLabel>{{ item.label }}</span>
+    </a>
+  </ng-container>
+</mat-navigation-rail>
+<mat-sidenav-container>
+  <mat-sidenav
+    #navigationDrawer
+    [opened]="isOpened"
+    (mouseleave)="closeNavigationDrawer($event)"
+  >
+    <div class="drawer-content">
+      <mat-toolbar *ngIf="isSmallScreen" class="drawer-content__toolbar">
+        <button mat-icon-button (click)="navigationDrawer.toggle()">
+          <mat-icon>menu_open</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-nav-list class="drawer-content__navigation">
+        <ng-container *ngIf="isSmallScreen">
+          <div
+            *ngIf="isTopLevelContent"
+            @fadeInOutTopLevel
+            class="list-items-wrapper"
+          >
+            <ng-container *ngFor="let item of navigation">
+              <mat-list-item
+                *ngIf="item.children?.length"
+                role="button"
+                (click)="forward(item, $event)"
+                (keydown.enter)="forward(item, $event)"
+                [class.active]="isLinkActive(item.link)"
+                [attr.aria-label]="item.label"
+              >
+                <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+                <span matLine>{{ item.label }}</span>
+                <mat-icon>arrow_forward</mat-icon>
+              </mat-list-item>
+              <a
+                *ngIf="!item.isExternal && !item.children?.length"
+                mat-list-item
+                [routerLink]="item.link"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: !!item.exactMatch }"
+              >
+                <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+                <span matLine>{{ item.label }}</span>
+              </a>
+              <a
+                *ngIf="item.isExternal"
+                mat-list-item
+                [href]="item.link"
+                target="_blank"
+                [attr.aria-label]="item.label"
+                (click)="closeNavigationDrawer($event)"
+              >
+                <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+                <span matLine>{{ item.label }}</span>
+              </a>
+            </ng-container>
+          </div>
+          <div *ngIf="!isTopLevelContent" @fadeInOutSubsection>
+            <div *ngIf="currentSection" class="list-items-wrapper">
+              <mat-list-item (click)="back($event)">
+                <mat-icon matListIcon>arrow_back</mat-icon>
+                <span matLine>Main Menu</span>
+              </mat-list-item>
+              <ng-container *ngFor="let item of currentSection.children">
+                <ng-container *ngIf="item.children?.length">
+                  <div
+                    cdkAccordionItem
+                    #accordionItem="cdkAccordionItem"
+                    [expanded]="isChildLinkActive(item.children)"
+                    [attr.aria-expanded]="accordionItem.expanded"
+                    @fadeInOut
+                  >
+                    <mat-list-item
+                      role="button"
+                      [attr.aria-label]="item.label"
+                      (click)="accordionItem.toggle()"
+                      (keydown.enter)="accordionItem.toggle()"
+                    >
+                      <span matLine>{{ item.label }}</span>
+                      <mat-icon
+                        [@accordionIndicatorRotate]="
+                          accordionItem.expanded ? 'expanded' : 'collapsed'
+                        "
+                        >arrow_drop_down</mat-icon
+                      >
+                    </mat-list-item>
+                    <div
+                      class="accordion-body"
+                      [@accordionExpansion]="
+                        accordionItem.expanded ? 'expanded' : 'collapsed'
+                      "
+                    >
+                      <a
+                        mat-list-item
+                        *ngFor="let child of item.children"
+                        [routerLink]="child.link"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: child.exactMatch }"
+                        [attr.aria-label]="item.label"
+                        >{{ child.label }}</a
+                      >
+                    </div>
+                  </div>
+                </ng-container>
+                <a
+                  *ngIf="!item.children?.length"
+                  mat-list-item
+                  [routerLink]="item.link"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: item.exactMatch }"
+                  [attr.aria-label]="item.label"
+                  @fadeInOut
+                >
+                  {{ item.label }}</a
+                >
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="!isSmallScreen">
+          <ng-container *ngIf="currentSection">
+            <ng-container *ngFor="let item of currentSection.children">
+              <ng-container *ngIf="item.children?.length">
+                <div
+                  cdkAccordionItem
+                  #accordionItem="cdkAccordionItem"
+                  [expanded]="isChildLinkActive(item.children)"
+                  [attr.aria-expanded]="accordionItem.expanded"
+                  @fadeInOut
+                >
+                  <mat-list-item
+                    role="button"
+                    [attr.aria-label]="item.label"
+                    (click)="accordionItem.toggle()"
+                    (keydown.enter)="accordionItem.toggle()"
+                  >
+                    <span matLine>{{ item.label }}</span>
+                    <mat-icon
+                      [@accordionIndicatorRotate]="
+                        accordionItem.expanded ? 'expanded' : 'collapsed'
+                      "
+                      >arrow_drop_down</mat-icon
+                    >
+                  </mat-list-item>
+                  <div
+                    class="accordion-body"
+                    [@accordionExpansion]="
+                      accordionItem.expanded ? 'expanded' : 'collapsed'
+                    "
+                  >
+                    <a
+                      mat-list-item
+                      *ngFor="let child of item.children"
+                      [routerLink]="child.link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: child.exactMatch }"
+                      >{{ child.label }}</a
+                    >
+                  </div>
+                </div>
+              </ng-container>
+              <a
+                *ngIf="!item.children?.length"
+                mat-list-item
+                [routerLink]="item.link"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: item.exactMatch }"
+                @fadeInOut
+              >
+                {{ item.label }}</a
+              >
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar *ngIf="isSmallScreen">
+      <button mat-icon-button (click)="navigationDrawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

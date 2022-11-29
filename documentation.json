@@ -1,19 +1,414 @@
 {
     "pipes": [],
-    "interfaces": [],
-    "injectables": [],
+    "interfaces": [
+        {
+            "name": "NavigationItem",
+            "id": "interface-NavigationItem-f458526829a95284385728ef856b5d2dc805a3a9d00cd42012001a39fcf2578b61dd97ee04f9a25b28f1330595bc44389c73bbc53f8512f4895e3308f3de49d9",
+            "file": "src/app/data/navigation.data.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface NavigationItem {\r\n  label: string;\r\n  icon?: string;\r\n  link: string;\r\n  children?: NavigationItem[];\r\n  isExternal?: boolean;\r\n}\r\n\r\nexport const navigation = [\r\n  {\r\n    label: \"Home\",\r\n    icon: \"home\",\r\n    link: \"/home\",\r\n  },\r\n  {\r\n    label: \"Get Started\",\r\n    icon: \"apps\",\r\n    link: \"/get-started\",\r\n  },\r\n  {\r\n    label: \"Develop\",\r\n    icon: \"code\",\r\n    link: \"/develop\",\r\n    children: [\r\n      {\r\n        label: \"Develop Overview\",\r\n        link: \"/develop\",\r\n      },\r\n      {\r\n        label: \"Android\",\r\n        link: \"/develop/android\",\r\n        children: [\r\n          {\r\n            label: \"MDC-Android\",\r\n            link: \"/develop/android/mdc-android\",\r\n          },\r\n          {\r\n            label: \"Jetpack Compose\",\r\n            link: \"/develop/android/jetpack-compose\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Flutter\",\r\n        link: \"/develop/flutter\",\r\n      },\r\n      {\r\n        label: \"Web\",\r\n        link: \"/develop/web\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Foundations\",\r\n    icon: \"book\",\r\n    link: \"/foundations\",\r\n    children: [\r\n      {\r\n        label: \"Foundations Overview\",\r\n        link: \"/foundations\",\r\n      },\r\n      {\r\n        label: \"Accessibility\",\r\n        link: \"/foundations/accessibility\",\r\n      },\r\n      {\r\n        label: \"Adaptive Design\",\r\n        link: \"/foundations/adaptive-design\",\r\n        children: [\r\n          {\r\n            label: \"Adaptive Design\",\r\n            link: \"/foundations/adaptive-design/overview\",\r\n          },\r\n          {\r\n            label: \"Design for large screens\",\r\n            link: \"/foundations/adaptive-design/large-screens/overview\",\r\n          },\r\n          {\r\n            label: \"Canonical layouts\",\r\n            link: \"/foundations/adaptive-design/canonical-layouts\",\r\n          },\r\n          {\r\n            label: \"Foldable devices\",\r\n            link: \"/foundations/adaptive-design/foldables/overview\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Customizing Material\",\r\n        link: \"/foundations/customization\",\r\n      },\r\n      {\r\n        label: \"Design Token\",\r\n        link: \"/foundations/design-tokens\",\r\n      },\r\n      {\r\n        label: \"Interaction States\",\r\n        link: \"/foundations/interaction-states\",\r\n      },\r\n      {\r\n        label: \"Material A-Z\",\r\n        link: \"glossary\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Styles\",\r\n    icon: \"palette\",\r\n    link: \"/styles\",\r\n    children: [\r\n      {\r\n        label: \"Styles overview\",\r\n        link: \"/styles\",\r\n      },\r\n      {\r\n        label: \"Color\",\r\n        link: \"/styles/color\",\r\n        children: [\r\n          {\r\n            label: \"Overview\",\r\n            link: \"/styles/color/overview\",\r\n          },\r\n          {\r\n            label: \"Color system\",\r\n            link: \"/styles/color/the-color-system\",\r\n          },\r\n          {\r\n            label: \"Dynamic color\",\r\n            link: \"/styles/color/dynamic-color\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Elevation\",\r\n        link: \"/styles/elevation\",\r\n      },\r\n      {\r\n        label: \"Icons\",\r\n        link: \"/styles/icons\",\r\n      },\r\n      {\r\n        label: \"Motion\",\r\n        link: \"/styles/motion\",\r\n        children: [\r\n          {\r\n            label: \"Overview\",\r\n            link: \"/styles/motion/overview\",\r\n          },\r\n          {\r\n            label: \"Easing and duration\",\r\n            link: \"/styles/motion/easing-and-duration\",\r\n          },\r\n          {\r\n            label: \"Transitions\",\r\n            link: \"/styles/motion/transitions\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Shape\",\r\n        link: \"/styles/shape\",\r\n      },\r\n      {\r\n        label: \"Typography\",\r\n        link: \"/styles/typography\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Components\",\r\n    icon: \"add_circle\",\r\n    link: \"/components\",\r\n    children: [\r\n      {\r\n        label: \"Components overview\",\r\n        link: \"/components\",\r\n      },\r\n      {\r\n        label: \"Badges\",\r\n        link: \"/components/badges\",\r\n      },\r\n      {\r\n        label: \"Bottom app bar\",\r\n        link: \"/components/bottom-app-bar\",\r\n      },\r\n      {\r\n        label: \"Bottom sheets\",\r\n        link: \"/components/bottom-sheets\",\r\n      },\r\n      {\r\n        label: \"Buttons\",\r\n        link: \"/components/buttons\",\r\n        children: [\r\n          {\r\n            label: \"All buttons\",\r\n            link: \"/components/buttons/all-buttons\",\r\n          },\r\n          {\r\n            label: \"Common buttons\",\r\n            link: \"/components/buttons/buttons\",\r\n          },\r\n          {\r\n            label: \"FAB\",\r\n            link: \"/components/buttons/floating-action-button\",\r\n          },\r\n          {\r\n            label: \"Extended FAB\",\r\n            link: \"/components/buttons/extended-fab\",\r\n          },\r\n          {\r\n            label: \"Icon buttons\",\r\n            link: \"/components/buttons/icon-buttons\",\r\n          },\r\n          {\r\n            label: \"Segmented buttons\",\r\n            link: \"/components/buttons/segmented-buttons\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Cards\",\r\n        link: \"/components/cards\",\r\n      },\r\n      {\r\n        label: \"Checkbox\",\r\n        link: \"/components/checkbox\",\r\n      },\r\n      {\r\n        label: \"Chips\",\r\n        link: \"/components/chips\",\r\n      },\r\n      {\r\n        label: \"Date pickers\",\r\n        link: \"/components/date-pickers\",\r\n      },\r\n      {\r\n        label: \"Dialogs\",\r\n        link: \"/components/dialogs\",\r\n      },\r\n      {\r\n        label: \"Divider\",\r\n        link: \"/components/divider\",\r\n      },\r\n      {\r\n        label: \"Lists\",\r\n        link: \"/components/lists\",\r\n      },\r\n      {\r\n        label: \"Menus\",\r\n        link: \"/components/menus\",\r\n      },\r\n      {\r\n        label: \"Navigation bar\",\r\n        link: \"/components/navigation-bar\",\r\n      },\r\n      {\r\n        label: \"Navigation drawer\",\r\n        link: \"/components/navigation-drawer\",\r\n      },\r\n      {\r\n        label: \"Navigation rail\",\r\n        link: \"/components/navigation-rail\",\r\n      },\r\n      {\r\n        label: \"Progress indicators\",\r\n        link: \"/components/progress-indicators\",\r\n      },\r\n      {\r\n        label: \"Radio button\",\r\n        link: \"/components/radio-button\",\r\n      },\r\n      {\r\n        label: \"Sliders\",\r\n        link: \"/components/sliders\",\r\n      },\r\n      {\r\n        label: \"Snackbar\",\r\n        link: \"/components/snackbar\",\r\n      },\r\n      {\r\n        label: \"Switch\",\r\n        link: \"/components/switch\",\r\n      },\r\n      {\r\n        label: \"Tabs\",\r\n        link: \"/components/tabs\",\r\n      },\r\n      {\r\n        label: \"Text fields\",\r\n        link: \"/components/text-fields\",\r\n      },\r\n      {\r\n        label: \"Time pickers\",\r\n        link: \"/components/time-pickers\",\r\n      },\r\n      {\r\n        label: \"Top app bar\",\r\n        link: \"/components/top-app-bar\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Blog\",\r\n    icon: \"pages\",\r\n    link: \"http://material.io/blog\",\r\n    isExternal: true,\r\n  },\r\n];\r\n",
+            "properties": [
+                {
+                    "name": "children",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NavigationItem[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "isExternal",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "LayoutService",
+            "id": "injectable-LayoutService-1c019eaac918be8ed75ec28affdddb0487cb068114d81e15ad9ce42ef6678d95c2092bb01b3b583b2bb60d3d3c67714ff25dca052443d8d3df918c7298a948ce",
+            "file": "src/app/services/layout.service.ts",
+            "properties": [
+                {
+                    "name": "_destroyed",
+                    "defaultValue": "new Subject<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "_isSmallScreen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { BreakpointObserver, Breakpoints } from \"@angular/cdk/layout\";\nimport { Injectable, OnDestroy } from \"@angular/core\";\nimport { map, Subject, takeUntil } from \"rxjs\";\n\n@Injectable({\n  providedIn: \"root\",\n})\nexport class LayoutService implements OnDestroy {\n  private _destroyed = new Subject<void>();\n\n  get isSmallScreen() {\n    return this._isSmallScreen;\n  }\n  private _isSmallScreen = false;\n\n  constructor(private breakpointObserver: BreakpointObserver) {\n    this.breakpointObserver\n      .observe([Breakpoints.XSmall, Breakpoints.Small])\n      .pipe(\n        takeUntil(this._destroyed),\n        map((result) => {\n          this._isSmallScreen = result.matches;\n        })\n      )\n      .subscribe();\n  }\n\n  ngOnDestroy(): void {\n    this._destroyed.next();\n    this._destroyed.complete();\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "breakpointObserver",
+                        "type": "BreakpointObserver",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "breakpointObserver",
+                        "type": "BreakpointObserver",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "isSmallScreen": {
+                    "name": "isSmallScreen",
+                    "getSignature": {
+                        "name": "isSmallScreen",
+                        "type": "",
+                        "returnType": "",
+                        "line": 11
+                    }
+                }
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "NavigationService",
+            "id": "injectable-NavigationService-695d09ca7e948866cf70a26def54899448af577883f60cb5c469526f413c8ac54703ea9deeb7916ca4ee4c2716a24c64a9dfffd12440c9ee9dcbd09d1f84a3c3",
+            "file": "src/app/services/navigation.service.ts",
+            "properties": [
+                {
+                    "name": "_destroyed",
+                    "defaultValue": "new Subject<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "currentSection",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "isOpened",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "isTopLevelContent",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methods": [
+                {
+                    "name": "back",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "closeNavigationDrawer",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 47,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "forward",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 51,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openNavigationDrawer",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable, OnDestroy } from \"@angular/core\";\nimport { NavigationEnd, Router, RouterEvent } from \"@angular/router\";\nimport { Subject, filter, takeUntil } from \"rxjs\";\nimport { navigation, NavigationItem } from \"../data/navigation.data\";\n\n@Injectable({\n  providedIn: \"root\",\n})\nexport class NavigationService implements OnDestroy {\n  isOpened = false;\n\n  currentSection: any;\n\n  isTopLevelContent = true;\n\n  private _destroyed = new Subject<void>();\n\n  get navigation() {\n    return navigation;\n  }\n\n  constructor(private router: Router) {\n    this.router.events\n      .pipe(\n        filter((e): e is RouterEvent => e instanceof NavigationEnd),\n        takeUntil(this._destroyed)\n      )\n      .subscribe(() => {\n        const parts = this.router.url.split(\"/\");\n        (this.isTopLevelContent = !(parts.length > 2)),\n          (this.currentSection = this.navigation.find(\n            (item: NavigationItem) => item.link === parts[1]\n          ));\n      });\n  }\n\n  ngOnDestroy(): void {\n    this._destroyed.next();\n    this._destroyed.complete();\n  }\n\n  openNavigationDrawer(item: any, event: Event) {\n    this.currentSection = item;\n    this.isOpened = this.currentSection.children?.length > 0;\n  }\n\n  closeNavigationDrawer(event: Event) {\n    this.isOpened = false;\n  }\n\n  forward(item: any, event: Event) {\n    this.isTopLevelContent = false;\n    this.currentSection = item;\n  }\n\n  back(event: Event) {\n    this.currentSection = null;\n    this.isTopLevelContent = true;\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "accessors": {
+                "navigation": {
+                    "name": "navigation",
+                    "getSignature": {
+                        "name": "navigation",
+                        "type": "",
+                        "returnType": "",
+                        "line": 18
+                    }
+                }
+            },
+            "type": "injectable"
+        }
+    ],
     "guards": [],
     "interceptors": [],
     "classes": [],
     "directives": [
         {
             "name": "MatNavigationRailItemIcon",
-            "id": "directive-MatNavigationRailItemIcon-099438c4a2d54db54b74dd11a724d3f4742cd48093067763ec6e2efddfd52526325760e0cfb305de8263903a20fd9f93e0750a8b65fb4391f6be0a3fb6ffe212",
+            "id": "directive-MatNavigationRailItemIcon-47c0c6ad96d240e8f1c2ab7a66992b0ebaba819155f3ecce8af912a76c67475a1f79a85b7524934bf8ef7073ac8fb3a5c4ff1e605c83fbc283264b3a5774a9a7",
             "file": "src/app/components/navigation-rail/navigation-rail.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { BooleanInput, coerceBooleanProperty } from \"@angular/cdk/coercion\";\r\nimport {\r\n  ANIMATION_MODULE_TYPE,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  ContentChild,\r\n  Directive,\r\n  ElementRef,\r\n  Inject,\r\n  Input,\r\n  Optional,\r\n  ViewEncapsulation,\r\n} from \"@angular/core\";\r\nimport {\r\n  MAT_RIPPLE_GLOBAL_OPTIONS,\r\n  RippleConfig,\r\n  RippleGlobalOptions,\r\n  ThemePalette,\r\n} from \"@angular/material/core\";\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemIcon]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__icon\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemIcon {}\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemLabel]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__label\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemLabel {}\r\n\r\n@Component({\r\n  selector: \"[mat-navigation-rail-item]\",\r\n  templateUrl: \"./navigation-rail-item.html\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item\",\r\n    \"[class.mat-navigation-rail-item-with-label]\": \"_label\",\r\n    \"[class.mat-navigation-rail-item--disabled]\": \"disabled\",\r\n    \"[class.mat-navigation-rail-item--active]\": \"active\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRailItem {\r\n  @ContentChild(MatNavigationRailItemIcon)\r\n  _icon?: MatNavigationRailItemIcon;\r\n\r\n  @ContentChild(MatNavigationRailItemLabel)\r\n  _label?: MatNavigationRailItemLabel;\r\n\r\n  rippleConfig: RippleConfig & RippleGlobalOptions;\r\n\r\n  @Input()\r\n  get active(): boolean {\r\n    return this._active;\r\n  }\r\n  set active(value: BooleanInput) {\r\n    this._active = coerceBooleanProperty(value);\r\n  }\r\n  private _active = false;\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled || this._navigationRail?.disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  get rippleDisabled(): boolean {\r\n    return (\r\n      this.disabled ||\r\n      this.disableRipple ||\r\n      this._navigationRail.disableRipple ||\r\n      !!this.rippleConfig.disabled\r\n    );\r\n  }\r\n\r\n  constructor(\r\n    readonly elementRef: ElementRef<HTMLElement>,\r\n    private _navigationRail: MatNavigationRail,\r\n    @Optional()\r\n    @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)\r\n    globalRippleOptions: RippleGlobalOptions | null,\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string\r\n  ) {\r\n    this.rippleConfig = globalRippleOptions || {};\r\n\r\n    if (animationMode === \"NoopAnimations\") {\r\n      this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };\r\n    }\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: \"mat-navigation-rail\",\r\n  templateUrl: \"./navigation-rail.html\",\r\n  styleUrls: [\"./navigation-rail.scss\"],\r\n  host: {\r\n    class: \"mat-navigation-rail\",\r\n    role: \"navigation\",\r\n    \"[class._mat-animation-noopable]\": '_animationMode === \"NoopAnimations\"',\r\n    \"[class.mat-primary]\": 'color !== \"warn\" && color !== \"accent\"',\r\n    \"[class.mat-accent]\": 'color === \"accent\"',\r\n    \"[class.mat-warn]\": 'color === \"warn\"',\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRail {\r\n  @Input() color: ThemePalette = \"primary\";\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  constructor(\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) readonly _animationMode?: string\r\n  ) {}\r\n}\r\n",
+            "sourceCode": "import { BooleanInput, coerceBooleanProperty } from \"@angular/cdk/coercion\";\r\nimport {\r\n  ANIMATION_MODULE_TYPE,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  ContentChild,\r\n  Directive,\r\n  ElementRef,\r\n  Inject,\r\n  InjectionToken,\r\n  Input,\r\n  Optional,\r\n  ViewEncapsulation,\r\n} from \"@angular/core\";\r\nimport {\r\n  MAT_RIPPLE_GLOBAL_OPTIONS,\r\n  RippleConfig,\r\n  RippleGlobalOptions,\r\n  ThemePalette,\r\n} from \"@angular/material/core\";\r\n\r\nexport const MAT_NAVIGATION_RAIL = new InjectionToken<string>(\r\n  \"MAT_NAVIGATION_RAIL\"\r\n);\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemIcon]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__icon\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemIcon {}\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemLabel]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__label\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemLabel {}\r\n\r\n@Component({\r\n  selector: \"[mat-navigation-rail-item]\",\r\n  templateUrl: \"./navigation-rail-item.html\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item\",\r\n    \"[class.mat-navigation-rail-item-with-label]\": \"_label\",\r\n    \"[class.mat-navigation-rail-item--disabled]\": \"disabled\",\r\n    \"[class.mat-navigation-rail-item--active]\": \"active\",\r\n    \"[attr.aria-disabled]\": \"disabled\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRailItem {\r\n  @ContentChild(MatNavigationRailItemIcon)\r\n  _icon?: MatNavigationRailItemIcon;\r\n\r\n  @ContentChild(MatNavigationRailItemLabel)\r\n  _label?: MatNavigationRailItemLabel;\r\n\r\n  rippleConfig: RippleConfig & RippleGlobalOptions;\r\n\r\n  @Input()\r\n  get active(): boolean {\r\n    return this._active;\r\n  }\r\n  set active(value: BooleanInput) {\r\n    this._active = coerceBooleanProperty(value);\r\n  }\r\n  private _active = false;\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled || this._navigationRail?.disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  get rippleDisabled(): boolean {\r\n    return (\r\n      this.disabled ||\r\n      this.disableRipple ||\r\n      this._navigationRail.disableRipple ||\r\n      !!this.rippleConfig.disabled\r\n    );\r\n  }\r\n\r\n  constructor(\r\n    readonly elementRef: ElementRef<HTMLElement>,\r\n    @Inject(MAT_NAVIGATION_RAIL) private _navigationRail: MatNavigationRail,\r\n    @Optional()\r\n    @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)\r\n    globalRippleOptions: RippleGlobalOptions | null,\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string\r\n  ) {\r\n    this.rippleConfig = globalRippleOptions || {};\r\n\r\n    if (animationMode === \"NoopAnimations\") {\r\n      this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };\r\n    }\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: \"mat-navigation-rail\",\r\n  templateUrl: \"./navigation-rail.html\",\r\n  styleUrls: [\"./navigation-rail.scss\"],\r\n  host: {\r\n    class: \"mat-navigation-rail\",\r\n    role: \"navigation\",\r\n    \"[class._mat-animation-noopable]\": '_animationMode === \"NoopAnimations\"',\r\n    \"[class.mat-primary]\": 'color !== \"warn\" && color !== \"accent\"',\r\n    \"[class.mat-accent]\": 'color === \"accent\"',\r\n    \"[class.mat-warn]\": 'color === \"warn\"',\r\n    \"[attr.aria-disabled]\": \"disabled\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  providers: [{ provide: MAT_NAVIGATION_RAIL, useExisting: MatNavigationRail }],\r\n})\r\nexport class MatNavigationRail {\r\n  @Input() color: ThemePalette = \"primary\";\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  constructor(\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) readonly _animationMode?: string\r\n  ) {}\r\n}\r\n",
             "selector": "[matNavigationRailItemIcon]",
             "providers": [],
             "inputsClass": [],
@@ -27,12 +422,12 @@
         },
         {
             "name": "MatNavigationRailItemLabel",
-            "id": "directive-MatNavigationRailItemLabel-099438c4a2d54db54b74dd11a724d3f4742cd48093067763ec6e2efddfd52526325760e0cfb305de8263903a20fd9f93e0750a8b65fb4391f6be0a3fb6ffe212",
+            "id": "directive-MatNavigationRailItemLabel-47c0c6ad96d240e8f1c2ab7a66992b0ebaba819155f3ecce8af912a76c67475a1f79a85b7524934bf8ef7073ac8fb3a5c4ff1e605c83fbc283264b3a5774a9a7",
             "file": "src/app/components/navigation-rail/navigation-rail.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { BooleanInput, coerceBooleanProperty } from \"@angular/cdk/coercion\";\r\nimport {\r\n  ANIMATION_MODULE_TYPE,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  ContentChild,\r\n  Directive,\r\n  ElementRef,\r\n  Inject,\r\n  Input,\r\n  Optional,\r\n  ViewEncapsulation,\r\n} from \"@angular/core\";\r\nimport {\r\n  MAT_RIPPLE_GLOBAL_OPTIONS,\r\n  RippleConfig,\r\n  RippleGlobalOptions,\r\n  ThemePalette,\r\n} from \"@angular/material/core\";\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemIcon]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__icon\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemIcon {}\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemLabel]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__label\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemLabel {}\r\n\r\n@Component({\r\n  selector: \"[mat-navigation-rail-item]\",\r\n  templateUrl: \"./navigation-rail-item.html\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item\",\r\n    \"[class.mat-navigation-rail-item-with-label]\": \"_label\",\r\n    \"[class.mat-navigation-rail-item--disabled]\": \"disabled\",\r\n    \"[class.mat-navigation-rail-item--active]\": \"active\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRailItem {\r\n  @ContentChild(MatNavigationRailItemIcon)\r\n  _icon?: MatNavigationRailItemIcon;\r\n\r\n  @ContentChild(MatNavigationRailItemLabel)\r\n  _label?: MatNavigationRailItemLabel;\r\n\r\n  rippleConfig: RippleConfig & RippleGlobalOptions;\r\n\r\n  @Input()\r\n  get active(): boolean {\r\n    return this._active;\r\n  }\r\n  set active(value: BooleanInput) {\r\n    this._active = coerceBooleanProperty(value);\r\n  }\r\n  private _active = false;\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled || this._navigationRail?.disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  get rippleDisabled(): boolean {\r\n    return (\r\n      this.disabled ||\r\n      this.disableRipple ||\r\n      this._navigationRail.disableRipple ||\r\n      !!this.rippleConfig.disabled\r\n    );\r\n  }\r\n\r\n  constructor(\r\n    readonly elementRef: ElementRef<HTMLElement>,\r\n    private _navigationRail: MatNavigationRail,\r\n    @Optional()\r\n    @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)\r\n    globalRippleOptions: RippleGlobalOptions | null,\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string\r\n  ) {\r\n    this.rippleConfig = globalRippleOptions || {};\r\n\r\n    if (animationMode === \"NoopAnimations\") {\r\n      this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };\r\n    }\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: \"mat-navigation-rail\",\r\n  templateUrl: \"./navigation-rail.html\",\r\n  styleUrls: [\"./navigation-rail.scss\"],\r\n  host: {\r\n    class: \"mat-navigation-rail\",\r\n    role: \"navigation\",\r\n    \"[class._mat-animation-noopable]\": '_animationMode === \"NoopAnimations\"',\r\n    \"[class.mat-primary]\": 'color !== \"warn\" && color !== \"accent\"',\r\n    \"[class.mat-accent]\": 'color === \"accent\"',\r\n    \"[class.mat-warn]\": 'color === \"warn\"',\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRail {\r\n  @Input() color: ThemePalette = \"primary\";\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  constructor(\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) readonly _animationMode?: string\r\n  ) {}\r\n}\r\n",
+            "sourceCode": "import { BooleanInput, coerceBooleanProperty } from \"@angular/cdk/coercion\";\r\nimport {\r\n  ANIMATION_MODULE_TYPE,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  ContentChild,\r\n  Directive,\r\n  ElementRef,\r\n  Inject,\r\n  InjectionToken,\r\n  Input,\r\n  Optional,\r\n  ViewEncapsulation,\r\n} from \"@angular/core\";\r\nimport {\r\n  MAT_RIPPLE_GLOBAL_OPTIONS,\r\n  RippleConfig,\r\n  RippleGlobalOptions,\r\n  ThemePalette,\r\n} from \"@angular/material/core\";\r\n\r\nexport const MAT_NAVIGATION_RAIL = new InjectionToken<string>(\r\n  \"MAT_NAVIGATION_RAIL\"\r\n);\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemIcon]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__icon\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemIcon {}\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemLabel]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__label\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemLabel {}\r\n\r\n@Component({\r\n  selector: \"[mat-navigation-rail-item]\",\r\n  templateUrl: \"./navigation-rail-item.html\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item\",\r\n    \"[class.mat-navigation-rail-item-with-label]\": \"_label\",\r\n    \"[class.mat-navigation-rail-item--disabled]\": \"disabled\",\r\n    \"[class.mat-navigation-rail-item--active]\": \"active\",\r\n    \"[attr.aria-disabled]\": \"disabled\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRailItem {\r\n  @ContentChild(MatNavigationRailItemIcon)\r\n  _icon?: MatNavigationRailItemIcon;\r\n\r\n  @ContentChild(MatNavigationRailItemLabel)\r\n  _label?: MatNavigationRailItemLabel;\r\n\r\n  rippleConfig: RippleConfig & RippleGlobalOptions;\r\n\r\n  @Input()\r\n  get active(): boolean {\r\n    return this._active;\r\n  }\r\n  set active(value: BooleanInput) {\r\n    this._active = coerceBooleanProperty(value);\r\n  }\r\n  private _active = false;\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled || this._navigationRail?.disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  get rippleDisabled(): boolean {\r\n    return (\r\n      this.disabled ||\r\n      this.disableRipple ||\r\n      this._navigationRail.disableRipple ||\r\n      !!this.rippleConfig.disabled\r\n    );\r\n  }\r\n\r\n  constructor(\r\n    readonly elementRef: ElementRef<HTMLElement>,\r\n    @Inject(MAT_NAVIGATION_RAIL) private _navigationRail: MatNavigationRail,\r\n    @Optional()\r\n    @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)\r\n    globalRippleOptions: RippleGlobalOptions | null,\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string\r\n  ) {\r\n    this.rippleConfig = globalRippleOptions || {};\r\n\r\n    if (animationMode === \"NoopAnimations\") {\r\n      this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };\r\n    }\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: \"mat-navigation-rail\",\r\n  templateUrl: \"./navigation-rail.html\",\r\n  styleUrls: [\"./navigation-rail.scss\"],\r\n  host: {\r\n    class: \"mat-navigation-rail\",\r\n    role: \"navigation\",\r\n    \"[class._mat-animation-noopable]\": '_animationMode === \"NoopAnimations\"',\r\n    \"[class.mat-primary]\": 'color !== \"warn\" && color !== \"accent\"',\r\n    \"[class.mat-accent]\": 'color === \"accent\"',\r\n    \"[class.mat-warn]\": 'color === \"warn\"',\r\n    \"[attr.aria-disabled]\": \"disabled\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  providers: [{ provide: MAT_NAVIGATION_RAIL, useExisting: MatNavigationRail }],\r\n})\r\nexport class MatNavigationRail {\r\n  @Input() color: ThemePalette = \"primary\";\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  constructor(\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) readonly _animationMode?: string\r\n  ) {}\r\n}\r\n",
             "selector": "[matNavigationRailItemLabel]",
             "providers": [],
             "inputsClass": [],
@@ -48,7 +443,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-e197a0443d57b7b11ab7e59546380bab091eaafae503fbe172801fe1dc4c4f8e234032b6ff9063cec5d9b1ae7cb2bd768525d1b43a40355ca69abdd17d551335",
+            "id": "component-AppComponent-fee7a881efce07647ab4b80ee8ef0c7fd287695f22fe4734f819dd41515ff95becaf4bc036ef26d586d1c69c5e1fec0eaabef2ba058c738ddd5cd4edcffbff9b",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -75,16 +470,195 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"app-root\",\r\n  templateUrl: \"./app.component.html\",\r\n  styleUrls: [\"./app.component.scss\"],\r\n})\r\nexport class AppComponent {}\r\n",
+            "sourceCode": "import { Component } from \"@angular/core\";\r\nimport { NavigationService } from \"./services/navigation.service\";\r\nimport { LayoutService } from \"./services/layout.service\";\r\n\r\n@Component({\r\n  selector: \"app-root\",\r\n  templateUrl: \"./app.component.html\",\r\n  styleUrls: [\"./app.component.scss\"],\r\n})\r\nexport class AppComponent {\r\n  constructor(\r\n    readonly layoutService: LayoutService,\r\n    readonly navigationService: NavigationService\r\n  ) {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\r\n  display: block;\r\n}\r\n",
+                    "data": ":host {\r\n  display: flex;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\nmat-navigation-rail {\r\n  flex: 0;\r\n}\r\n.mat-drawer-container {\r\n  flex: 1;\r\n}\r\n.mat-sidenav {\r\n  width: 256px;\r\n}\r\n\r\n.drawer-content {\r\n  width: 100%;\r\n  height: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  overflow: hidden;\r\n  position: relative;\r\n\r\n  &__toolbar {\r\n    flex: 0;\r\n  }\r\n\r\n  &__navigation {\r\n    flex: 1;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n  }\r\n}\r\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<p>app works!</p>\r\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "layoutService",
+                        "type": "LayoutService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "navigationService",
+                        "type": "NavigationService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "layoutService",
+                        "type": "LayoutService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "navigationService",
+                        "type": "NavigationService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<mat-navigation-rail *ngIf=\"!layoutService.isSmallScreen\">\r\n  <app-rail-navigation></app-rail-navigation>\r\n</mat-navigation-rail>\r\n<mat-sidenav-container>\r\n  <mat-sidenav\r\n    #navigationDrawer\r\n    [opened]=\"navigationService.isOpened\"\r\n    (mouseleave)=\"navigationService.closeNavigationDrawer($event)\"\r\n  >\r\n    <div class=\"drawer-content\">\r\n      <mat-toolbar\r\n        *ngIf=\"layoutService.isSmallScreen\"\r\n        class=\"drawer-content__toolbar\"\r\n      >\r\n        <button mat-icon-button (click)=\"navigationDrawer.toggle()\">\r\n          <mat-icon>menu_open</mat-icon>\r\n        </button>\r\n      </mat-toolbar>\r\n      <app-drawer-navigation\r\n        class=\"drawer-content__navigation\"\r\n      ></app-drawer-navigation>\r\n    </div>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar *ngIf=\"layoutService.isSmallScreen\">\r\n      <button mat-icon-button (click)=\"navigationDrawer.toggle()\">\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n    </mat-toolbar>\r\n    <router-outlet></router-outlet>\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
+        },
+        {
+            "name": "BlankPage",
+            "id": "component-BlankPage-cc7610be2a6f005a6198246108e7968bc8b0c2fccc0954918bd06beb905a4044aceaf2e9a4db05214a700fcb354b47f25be34e22100717fee9e1c86273bd9da2",
+            "file": "src/app/pages/blank.page.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-blank",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p>\n  {{ route.url | async }}\n</p>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from \"@angular/core\";\nimport { ActivatedRoute } from \"@angular/router\";\n\n@Component({\n  selector: \"app-blank\",\n  template: `\n    <p>\n      {{ route.url | async }}\n    </p>\n  `,\n  styles: [],\n})\nexport class BlankPage {\n  constructor(readonly route: ActivatedRoute) {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "DrawerNavigationComponent",
+            "id": "component-DrawerNavigationComponent-cd3790ac547fad0892b6b3b4d36d9ebd052c6cb95dfb9c68b96d32a8a0c5156b72b7fe37c4bb8a798654263bb525a401476b72823ea506088f6cf4d7af683631",
+            "file": "src/app/containers/drawer-navigation/drawer-navigation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-drawer-navigation",
+            "styleUrls": [
+                "./drawer-navigation.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./drawer-navigation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { animate, style, transition, trigger } from \"@angular/animations\";\nimport { Component } from \"@angular/core\";\nimport { LayoutService } from \"src/app/services/layout.service\";\nimport { NavigationService } from \"src/app/services/navigation.service\";\n\n@Component({\n  selector: \"app-drawer-navigation\",\n  templateUrl: \"./drawer-navigation.component.html\",\n  styleUrls: [\"./drawer-navigation.component.scss\"],\n  animations: [\n    trigger(\"fadeInOut\", [\n      transition(\":enter\", [\n        style({ opacity: 0 }),\n        animate(\"200ms 200ms linear\", style({ opacity: 1 })),\n      ]),\n      transition(\":leave\", [\n        animate(\"100ms cubic-bezier(.2,0,0,1)\", style({ opacity: 0 })),\n      ]),\n    ]),\n    trigger(\"fadeInOutTopLevel\", [\n      transition(\":enter\", [\n        style({\n          opacity: 0,\n          transform: \"translateX(-10px)\",\n          // these styles are here to prevent scrollbars from apearing during animation\n          position: \"absolute\",\n          width: \"100%\",\n          top: \"8px\", // this is the default padding of the mat-list - need o fix this so it is 0\n        }),\n        animate(\n          \"200ms 200ms linear\",\n          style({ opacity: 1, transform: \"translateX(0)\" })\n        ),\n      ]),\n      transition(\":leave\", [\n        animate(\n          \"100ms cubic-bezier(.2,0,0,1)\",\n          style({\n            opacity: 0,\n            transform: \"translateX(-10px)\",\n          })\n        ),\n      ]),\n    ]),\n    trigger(\"fadeInOutSubsection\", [\n      transition(\":enter\", [\n        style({\n          opacity: 0,\n          transform: \"translateX(10px)\",\n          // these styles are here to prevent scrollbars from apearing during animation\n          position: \"absolute\",\n          width: \"100%\",\n          top: \"8px\", // this is the default padding of the mat-list - need o fix this so it is 0\n        }),\n        animate(\n          \"200ms 200ms linear\",\n          style({ opacity: 1, transform: \"translateX(0)\" })\n        ),\n      ]),\n      transition(\":leave\", [\n        animate(\n          \"100ms cubic-bezier(.2,0,0,1)\",\n          style({\n            opacity: 0,\n            transform: \"translateX(10px)\",\n          })\n        ),\n      ]),\n    ]),\n  ],\n})\nexport class DrawerNavigationComponent {\n  constructor(\n    readonly layoutService: LayoutService,\n    readonly navigationService: NavigationService\n  ) {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  display: block;\r\n  position: relative;\r\n}\r\n",
+                    "styleUrl": "./drawer-navigation.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "layoutService",
+                        "type": "LayoutService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "navigationService",
+                        "type": "NavigationService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 72,
+                "jsdoctags": [
+                    {
+                        "name": "layoutService",
+                        "type": "LayoutService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "navigationService",
+                        "type": "NavigationService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<mat-nav-list>\n  <!-- render top level items if there is no navigation rail (we are on a small screen)-->\n  <ng-container *ngIf=\"layoutService.isSmallScreen\">\n    <div *ngIf=\"navigationService.isTopLevelContent\" @fadeInOutTopLevel>\n      <ng-container *ngFor=\"let item of navigationService.navigation\">\n        <mat-list-item *ngIf=\"!item.isExternal\" [routerLink]=\"item.link\">\n          <mat-icon matListIcon>{{ item.icon }}</mat-icon>\n          <span matLine>{{ item.label }}</span>\n\n          <button\n            mat-icon-button\n            *ngIf=\"item.children?.length\"\n            (click)=\"navigationService.forward(item, $event)\"\n          >\n            <mat-icon>arrow_forward</mat-icon>\n          </button>\n        </mat-list-item>\n        <a\n          *ngIf=\"item.isExternal\"\n          mat-list-item\n          [href]=\"item.link\"\n          target=\"_blank\"\n          [attr.aria-label]=\"item.label\"\n          (click)=\"navigationService.closeNavigationDrawer($event)\"\n        >\n          <mat-icon matListIcon>{{ item.icon }}</mat-icon>\n          <span matLine>{{ item.label }}</span>\n        </a>\n      </ng-container>\n    </div>\n    <div *ngIf=\"!navigationService.isTopLevelContent\" @fadeInOutSubsection>\n      <div *ngIf=\"navigationService.currentSection\">\n        <mat-list-item (click)=\"navigationService.back($event)\">\n          <mat-icon matListIcon>arrow_back</mat-icon>\n          <span matLine>Main Menu</span>\n        </mat-list-item>\n        <ng-container\n          *ngFor=\"let item of navigationService.currentSection.children\"\n        >\n          <a mat-list-item [routerLink]=\"item.link\"> {{ item.label }}</a>\n        </ng-container>\n      </div>\n    </div>\n  </ng-container>\n  <ng-container *ngIf=\"!layoutService.isSmallScreen\">\n    <ng-container *ngIf=\"navigationService.currentSection\">\n      <!-- render the children of the current section -->\n      <a\n        *ngFor=\"let item of navigationService.currentSection.children\"\n        mat-list-item\n        [routerLink]=\"item.link\"\n        @fadeInOut\n      >\n        {{ item.label }}</a\n      >\n    </ng-container>\n  </ng-container>\n</mat-nav-list>\n"
         },
         {
             "name": "DummyComponent",
@@ -118,7 +692,7 @@
         },
         {
             "name": "MatNavigationRail",
-            "id": "component-MatNavigationRail-099438c4a2d54db54b74dd11a724d3f4742cd48093067763ec6e2efddfd52526325760e0cfb305de8263903a20fd9f93e0750a8b65fb4391f6be0a3fb6ffe212",
+            "id": "component-MatNavigationRail-47c0c6ad96d240e8f1c2ab7a66992b0ebaba819155f3ecce8af912a76c67475a1f79a85b7524934bf8ef7073ac8fb3a5c4ff1e605c83fbc283264b3a5774a9a7",
             "file": "src/app/components/navigation-rail/navigation-rail.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -128,7 +702,11 @@
             "host": {},
             "inputs": [],
             "outputs": [],
-            "providers": [],
+            "providers": [
+                {
+                    "name": "{ provide: MAT_NAVIGATION_RAIL, useExisting: MatNavigationRail }"
+                }
+            ],
             "selector": "mat-navigation-rail",
             "styleUrls": [
                 "./navigation-rail.scss"
@@ -144,7 +722,7 @@
                     "defaultValue": "\"primary\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 128,
+                    "line": 136,
                     "type": "ThemePalette",
                     "decorators": []
                 },
@@ -152,7 +730,7 @@
                     "name": "disabled",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 131,
+                    "line": 139,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -160,7 +738,7 @@
                     "name": "disableRipple",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 140,
+                    "line": 148,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -175,7 +753,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 137,
+                    "line": 145,
                     "modifierKind": [
                         121
                     ]
@@ -188,7 +766,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 148,
+                    "line": 156,
                     "modifierKind": [
                         121
                     ]
@@ -202,11 +780,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { BooleanInput, coerceBooleanProperty } from \"@angular/cdk/coercion\";\r\nimport {\r\n  ANIMATION_MODULE_TYPE,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  ContentChild,\r\n  Directive,\r\n  ElementRef,\r\n  Inject,\r\n  Input,\r\n  Optional,\r\n  ViewEncapsulation,\r\n} from \"@angular/core\";\r\nimport {\r\n  MAT_RIPPLE_GLOBAL_OPTIONS,\r\n  RippleConfig,\r\n  RippleGlobalOptions,\r\n  ThemePalette,\r\n} from \"@angular/material/core\";\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemIcon]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__icon\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemIcon {}\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemLabel]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__label\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemLabel {}\r\n\r\n@Component({\r\n  selector: \"[mat-navigation-rail-item]\",\r\n  templateUrl: \"./navigation-rail-item.html\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item\",\r\n    \"[class.mat-navigation-rail-item-with-label]\": \"_label\",\r\n    \"[class.mat-navigation-rail-item--disabled]\": \"disabled\",\r\n    \"[class.mat-navigation-rail-item--active]\": \"active\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRailItem {\r\n  @ContentChild(MatNavigationRailItemIcon)\r\n  _icon?: MatNavigationRailItemIcon;\r\n\r\n  @ContentChild(MatNavigationRailItemLabel)\r\n  _label?: MatNavigationRailItemLabel;\r\n\r\n  rippleConfig: RippleConfig & RippleGlobalOptions;\r\n\r\n  @Input()\r\n  get active(): boolean {\r\n    return this._active;\r\n  }\r\n  set active(value: BooleanInput) {\r\n    this._active = coerceBooleanProperty(value);\r\n  }\r\n  private _active = false;\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled || this._navigationRail?.disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  get rippleDisabled(): boolean {\r\n    return (\r\n      this.disabled ||\r\n      this.disableRipple ||\r\n      this._navigationRail.disableRipple ||\r\n      !!this.rippleConfig.disabled\r\n    );\r\n  }\r\n\r\n  constructor(\r\n    readonly elementRef: ElementRef<HTMLElement>,\r\n    private _navigationRail: MatNavigationRail,\r\n    @Optional()\r\n    @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)\r\n    globalRippleOptions: RippleGlobalOptions | null,\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string\r\n  ) {\r\n    this.rippleConfig = globalRippleOptions || {};\r\n\r\n    if (animationMode === \"NoopAnimations\") {\r\n      this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };\r\n    }\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: \"mat-navigation-rail\",\r\n  templateUrl: \"./navigation-rail.html\",\r\n  styleUrls: [\"./navigation-rail.scss\"],\r\n  host: {\r\n    class: \"mat-navigation-rail\",\r\n    role: \"navigation\",\r\n    \"[class._mat-animation-noopable]\": '_animationMode === \"NoopAnimations\"',\r\n    \"[class.mat-primary]\": 'color !== \"warn\" && color !== \"accent\"',\r\n    \"[class.mat-accent]\": 'color === \"accent\"',\r\n    \"[class.mat-warn]\": 'color === \"warn\"',\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRail {\r\n  @Input() color: ThemePalette = \"primary\";\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  constructor(\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) readonly _animationMode?: string\r\n  ) {}\r\n}\r\n",
+            "sourceCode": "import { BooleanInput, coerceBooleanProperty } from \"@angular/cdk/coercion\";\r\nimport {\r\n  ANIMATION_MODULE_TYPE,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  ContentChild,\r\n  Directive,\r\n  ElementRef,\r\n  Inject,\r\n  InjectionToken,\r\n  Input,\r\n  Optional,\r\n  ViewEncapsulation,\r\n} from \"@angular/core\";\r\nimport {\r\n  MAT_RIPPLE_GLOBAL_OPTIONS,\r\n  RippleConfig,\r\n  RippleGlobalOptions,\r\n  ThemePalette,\r\n} from \"@angular/material/core\";\r\n\r\nexport const MAT_NAVIGATION_RAIL = new InjectionToken<string>(\r\n  \"MAT_NAVIGATION_RAIL\"\r\n);\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemIcon]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__icon\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemIcon {}\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemLabel]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__label\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemLabel {}\r\n\r\n@Component({\r\n  selector: \"[mat-navigation-rail-item]\",\r\n  templateUrl: \"./navigation-rail-item.html\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item\",\r\n    \"[class.mat-navigation-rail-item-with-label]\": \"_label\",\r\n    \"[class.mat-navigation-rail-item--disabled]\": \"disabled\",\r\n    \"[class.mat-navigation-rail-item--active]\": \"active\",\r\n    \"[attr.aria-disabled]\": \"disabled\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRailItem {\r\n  @ContentChild(MatNavigationRailItemIcon)\r\n  _icon?: MatNavigationRailItemIcon;\r\n\r\n  @ContentChild(MatNavigationRailItemLabel)\r\n  _label?: MatNavigationRailItemLabel;\r\n\r\n  rippleConfig: RippleConfig & RippleGlobalOptions;\r\n\r\n  @Input()\r\n  get active(): boolean {\r\n    return this._active;\r\n  }\r\n  set active(value: BooleanInput) {\r\n    this._active = coerceBooleanProperty(value);\r\n  }\r\n  private _active = false;\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled || this._navigationRail?.disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  get rippleDisabled(): boolean {\r\n    return (\r\n      this.disabled ||\r\n      this.disableRipple ||\r\n      this._navigationRail.disableRipple ||\r\n      !!this.rippleConfig.disabled\r\n    );\r\n  }\r\n\r\n  constructor(\r\n    readonly elementRef: ElementRef<HTMLElement>,\r\n    @Inject(MAT_NAVIGATION_RAIL) private _navigationRail: MatNavigationRail,\r\n    @Optional()\r\n    @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)\r\n    globalRippleOptions: RippleGlobalOptions | null,\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string\r\n  ) {\r\n    this.rippleConfig = globalRippleOptions || {};\r\n\r\n    if (animationMode === \"NoopAnimations\") {\r\n      this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };\r\n    }\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: \"mat-navigation-rail\",\r\n  templateUrl: \"./navigation-rail.html\",\r\n  styleUrls: [\"./navigation-rail.scss\"],\r\n  host: {\r\n    class: \"mat-navigation-rail\",\r\n    role: \"navigation\",\r\n    \"[class._mat-animation-noopable]\": '_animationMode === \"NoopAnimations\"',\r\n    \"[class.mat-primary]\": 'color !== \"warn\" && color !== \"accent\"',\r\n    \"[class.mat-accent]\": 'color === \"accent\"',\r\n    \"[class.mat-warn]\": 'color === \"warn\"',\r\n    \"[attr.aria-disabled]\": \"disabled\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  providers: [{ provide: MAT_NAVIGATION_RAIL, useExisting: MatNavigationRail }],\r\n})\r\nexport class MatNavigationRail {\r\n  @Input() color: ThemePalette = \"primary\";\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  constructor(\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) readonly _animationMode?: string\r\n  ) {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$base-width: 72px;\r\n$top-padding: 8px;\r\n$base-height: 72px;\r\n$default-icon-padding: 24px;\r\n$icon-top-padding: 14px;\r\n$label-bottom-padding: 16px;\r\n\r\n.mat-navigation-rail {\r\n  display: block;\r\n  width: $base-width;\r\n  height: 100%;\r\n  padding-top: $top-padding;\r\n  -webkit-tap-highlight-color: transparent;\r\n  border-radius: 50%;\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n}\r\n\r\n.mat-navigation-rail-item {\r\n  position: relative;\r\n  cursor: pointer;\r\n  outline: none;\r\n  height: $base-height;\r\n  width: 100%;\r\n  border-radius: 50%;\r\n\r\n  &.mat-navigation-rail-item--disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  .mat-navigation-rail-item__content {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    height: inherit;\r\n  }\r\n\r\n  .mat-navigation-rail-item__icon {\r\n    padding-top: $default-icon-padding;\r\n    padding-bottom: $default-icon-padding;\r\n  }\r\n\r\n  &.mat-navigation-rail-item-with-label {\r\n    .mat-navigation-rail-item__icon {\r\n      padding-top: $icon-top-padding;\r\n      padding-bottom: 0;\r\n    }\r\n    .mat-navigation-rail-item__label {\r\n      padding-top: 0;\r\n      padding-bottom: $label-bottom-padding;\r\n    }\r\n  }\r\n}\r\n\r\n.mat-navigation-rail-item__ripple {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  pointer-events: none;\r\n}\r\n\r\n.mat-navigation-rail-item__ripple,\r\n.mat-navigation-rail-item__content {\r\n  border-radius: inherit;\r\n}\r\n",
+                    "data": "$base-width: 72px;\r\n$top-padding: 8px;\r\n$base-height: 72px;\r\n$default-icon-padding: 24px;\r\n$icon-top-padding: 14px;\r\n$label-bottom-padding: 16px;\r\n\r\n.mat-navigation-rail {\r\n  display: block;\r\n  width: $base-width;\r\n  padding-top: $top-padding;\r\n  -webkit-tap-highlight-color: transparent;\r\n  border-radius: 50%;\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n}\r\n\r\n.mat-navigation-rail-item {\r\n  position: relative;\r\n  cursor: pointer;\r\n  outline: none;\r\n  aspect-ratio: 1/1;\r\n  width: 100%;\r\n  border-radius: 50%;\r\n\r\n  &.mat-navigation-rail-item--disabled {\r\n    pointer-events: none;\r\n  }\r\n\r\n  .mat-navigation-rail-item__content {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    height: inherit;\r\n  }\r\n\r\n  .mat-navigation-rail-item__icon {\r\n    padding-top: $default-icon-padding;\r\n    padding-bottom: $default-icon-padding;\r\n  }\r\n\r\n  &.mat-navigation-rail-item-with-label {\r\n    .mat-navigation-rail-item__icon {\r\n      padding-top: $icon-top-padding;\r\n      padding-bottom: 0;\r\n    }\r\n    .mat-navigation-rail-item__label {\r\n      padding-top: 0;\r\n      padding-bottom: $label-bottom-padding;\r\n    }\r\n  }\r\n}\r\n\r\n.mat-navigation-rail-item__ripple {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  pointer-events: none;\r\n}\r\n\r\n.mat-navigation-rail-item__ripple,\r\n.mat-navigation-rail-item__content {\r\n  border-radius: inherit;\r\n}\r\n",
                     "styleUrl": "./navigation-rail.scss"
                 }
             ],
@@ -225,7 +803,7 @@
                         "optional": true
                     }
                 ],
-                "line": 148,
+                "line": 156,
                 "jsdoctags": [
                     {
                         "name": "_animationMode",
@@ -256,7 +834,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 134,
+                        "line": 142,
                         "jsdoctags": [
                             {
                                 "name": "value",
@@ -273,7 +851,7 @@
                         "name": "disabled",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 131
+                        "line": 139
                     }
                 },
                 "disableRipple": {
@@ -292,7 +870,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 144,
+                        "line": 152,
                         "jsdoctags": [
                             {
                                 "name": "value",
@@ -309,7 +887,7 @@
                         "name": "disableRipple",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 140
+                        "line": 148
                     }
                 }
             },
@@ -317,7 +895,7 @@
         },
         {
             "name": "MatNavigationRailItem",
-            "id": "component-MatNavigationRailItem-099438c4a2d54db54b74dd11a724d3f4742cd48093067763ec6e2efddfd52526325760e0cfb305de8263903a20fd9f93e0750a8b65fb4391f6be0a3fb6ffe212",
+            "id": "component-MatNavigationRailItem-47c0c6ad96d240e8f1c2ab7a66992b0ebaba819155f3ecce8af912a76c67475a1f79a85b7524934bf8ef7073ac8fb3a5c4ff1e605c83fbc283264b3a5774a9a7",
             "file": "src/app/components/navigation-rail/navigation-rail.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [
@@ -340,7 +918,7 @@
                     "name": "active",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 59,
+                    "line": 65,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -348,7 +926,7 @@
                     "name": "disabled",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 68,
+                    "line": 74,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -356,7 +934,7 @@
                     "name": "disableRipple",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 77,
+                    "line": 83,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -371,7 +949,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 65,
+                    "line": 71,
                     "modifierKind": [
                         121
                     ]
@@ -384,7 +962,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 74,
+                    "line": 80,
                     "modifierKind": [
                         121
                     ]
@@ -397,7 +975,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 85,
+                    "line": 91,
                     "modifierKind": [
                         121
                     ]
@@ -409,7 +987,7 @@
                     "type": "MatNavigationRailItemIcon",
                     "optional": true,
                     "description": "",
-                    "line": 51,
+                    "line": 57,
                     "decorators": [
                         {
                             "name": "ContentChild",
@@ -424,7 +1002,7 @@
                     "type": "MatNavigationRailItemLabel",
                     "optional": true,
                     "description": "",
-                    "line": 54,
+                    "line": 60,
                     "decorators": [
                         {
                             "name": "ContentChild",
@@ -439,7 +1017,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 56
+                    "line": 62
                 }
             ],
             "methodsClass": [],
@@ -450,7 +1028,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { BooleanInput, coerceBooleanProperty } from \"@angular/cdk/coercion\";\r\nimport {\r\n  ANIMATION_MODULE_TYPE,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  ContentChild,\r\n  Directive,\r\n  ElementRef,\r\n  Inject,\r\n  Input,\r\n  Optional,\r\n  ViewEncapsulation,\r\n} from \"@angular/core\";\r\nimport {\r\n  MAT_RIPPLE_GLOBAL_OPTIONS,\r\n  RippleConfig,\r\n  RippleGlobalOptions,\r\n  ThemePalette,\r\n} from \"@angular/material/core\";\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemIcon]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__icon\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemIcon {}\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemLabel]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__label\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemLabel {}\r\n\r\n@Component({\r\n  selector: \"[mat-navigation-rail-item]\",\r\n  templateUrl: \"./navigation-rail-item.html\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item\",\r\n    \"[class.mat-navigation-rail-item-with-label]\": \"_label\",\r\n    \"[class.mat-navigation-rail-item--disabled]\": \"disabled\",\r\n    \"[class.mat-navigation-rail-item--active]\": \"active\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRailItem {\r\n  @ContentChild(MatNavigationRailItemIcon)\r\n  _icon?: MatNavigationRailItemIcon;\r\n\r\n  @ContentChild(MatNavigationRailItemLabel)\r\n  _label?: MatNavigationRailItemLabel;\r\n\r\n  rippleConfig: RippleConfig & RippleGlobalOptions;\r\n\r\n  @Input()\r\n  get active(): boolean {\r\n    return this._active;\r\n  }\r\n  set active(value: BooleanInput) {\r\n    this._active = coerceBooleanProperty(value);\r\n  }\r\n  private _active = false;\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled || this._navigationRail?.disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  get rippleDisabled(): boolean {\r\n    return (\r\n      this.disabled ||\r\n      this.disableRipple ||\r\n      this._navigationRail.disableRipple ||\r\n      !!this.rippleConfig.disabled\r\n    );\r\n  }\r\n\r\n  constructor(\r\n    readonly elementRef: ElementRef<HTMLElement>,\r\n    private _navigationRail: MatNavigationRail,\r\n    @Optional()\r\n    @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)\r\n    globalRippleOptions: RippleGlobalOptions | null,\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string\r\n  ) {\r\n    this.rippleConfig = globalRippleOptions || {};\r\n\r\n    if (animationMode === \"NoopAnimations\") {\r\n      this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };\r\n    }\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: \"mat-navigation-rail\",\r\n  templateUrl: \"./navigation-rail.html\",\r\n  styleUrls: [\"./navigation-rail.scss\"],\r\n  host: {\r\n    class: \"mat-navigation-rail\",\r\n    role: \"navigation\",\r\n    \"[class._mat-animation-noopable]\": '_animationMode === \"NoopAnimations\"',\r\n    \"[class.mat-primary]\": 'color !== \"warn\" && color !== \"accent\"',\r\n    \"[class.mat-accent]\": 'color === \"accent\"',\r\n    \"[class.mat-warn]\": 'color === \"warn\"',\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRail {\r\n  @Input() color: ThemePalette = \"primary\";\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  constructor(\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) readonly _animationMode?: string\r\n  ) {}\r\n}\r\n",
+            "sourceCode": "import { BooleanInput, coerceBooleanProperty } from \"@angular/cdk/coercion\";\r\nimport {\r\n  ANIMATION_MODULE_TYPE,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  ContentChild,\r\n  Directive,\r\n  ElementRef,\r\n  Inject,\r\n  InjectionToken,\r\n  Input,\r\n  Optional,\r\n  ViewEncapsulation,\r\n} from \"@angular/core\";\r\nimport {\r\n  MAT_RIPPLE_GLOBAL_OPTIONS,\r\n  RippleConfig,\r\n  RippleGlobalOptions,\r\n  ThemePalette,\r\n} from \"@angular/material/core\";\r\n\r\nexport const MAT_NAVIGATION_RAIL = new InjectionToken<string>(\r\n  \"MAT_NAVIGATION_RAIL\"\r\n);\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemIcon]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__icon\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemIcon {}\r\n\r\n@Directive({\r\n  selector: \"[matNavigationRailItemLabel]\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item__label\",\r\n  },\r\n})\r\nexport class MatNavigationRailItemLabel {}\r\n\r\n@Component({\r\n  selector: \"[mat-navigation-rail-item]\",\r\n  templateUrl: \"./navigation-rail-item.html\",\r\n  host: {\r\n    class: \"mat-navigation-rail-item\",\r\n    \"[class.mat-navigation-rail-item-with-label]\": \"_label\",\r\n    \"[class.mat-navigation-rail-item--disabled]\": \"disabled\",\r\n    \"[class.mat-navigation-rail-item--active]\": \"active\",\r\n    \"[attr.aria-disabled]\": \"disabled\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class MatNavigationRailItem {\r\n  @ContentChild(MatNavigationRailItemIcon)\r\n  _icon?: MatNavigationRailItemIcon;\r\n\r\n  @ContentChild(MatNavigationRailItemLabel)\r\n  _label?: MatNavigationRailItemLabel;\r\n\r\n  rippleConfig: RippleConfig & RippleGlobalOptions;\r\n\r\n  @Input()\r\n  get active(): boolean {\r\n    return this._active;\r\n  }\r\n  set active(value: BooleanInput) {\r\n    this._active = coerceBooleanProperty(value);\r\n  }\r\n  private _active = false;\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled || this._navigationRail?.disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  get rippleDisabled(): boolean {\r\n    return (\r\n      this.disabled ||\r\n      this.disableRipple ||\r\n      this._navigationRail.disableRipple ||\r\n      !!this.rippleConfig.disabled\r\n    );\r\n  }\r\n\r\n  constructor(\r\n    readonly elementRef: ElementRef<HTMLElement>,\r\n    @Inject(MAT_NAVIGATION_RAIL) private _navigationRail: MatNavigationRail,\r\n    @Optional()\r\n    @Inject(MAT_RIPPLE_GLOBAL_OPTIONS)\r\n    globalRippleOptions: RippleGlobalOptions | null,\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) animationMode?: string\r\n  ) {\r\n    this.rippleConfig = globalRippleOptions || {};\r\n\r\n    if (animationMode === \"NoopAnimations\") {\r\n      this.rippleConfig.animation = { enterDuration: 0, exitDuration: 0 };\r\n    }\r\n  }\r\n}\r\n\r\n@Component({\r\n  selector: \"mat-navigation-rail\",\r\n  templateUrl: \"./navigation-rail.html\",\r\n  styleUrls: [\"./navigation-rail.scss\"],\r\n  host: {\r\n    class: \"mat-navigation-rail\",\r\n    role: \"navigation\",\r\n    \"[class._mat-animation-noopable]\": '_animationMode === \"NoopAnimations\"',\r\n    \"[class.mat-primary]\": 'color !== \"warn\" && color !== \"accent\"',\r\n    \"[class.mat-accent]\": 'color === \"accent\"',\r\n    \"[class.mat-warn]\": 'color === \"warn\"',\r\n    \"[attr.aria-disabled]\": \"disabled\",\r\n  },\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  encapsulation: ViewEncapsulation.None,\r\n  providers: [{ provide: MAT_NAVIGATION_RAIL, useExisting: MatNavigationRail }],\r\n})\r\nexport class MatNavigationRail {\r\n  @Input() color: ThemePalette = \"primary\";\r\n\r\n  @Input()\r\n  get disabled(): boolean {\r\n    return this._disabled;\r\n  }\r\n  set disabled(value: BooleanInput) {\r\n    this._disabled = coerceBooleanProperty(value);\r\n  }\r\n  private _disabled = false;\r\n\r\n  @Input()\r\n  get disableRipple(): boolean {\r\n    return this._disableRipple;\r\n  }\r\n\r\n  set disableRipple(value: BooleanInput) {\r\n    this._disableRipple = coerceBooleanProperty(value);\r\n  }\r\n\r\n  private _disableRipple: boolean = false;\r\n\r\n  constructor(\r\n    @Optional() @Inject(ANIMATION_MODULE_TYPE) readonly _animationMode?: string\r\n  ) {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -486,7 +1064,7 @@
                         "optional": true
                     }
                 ],
-                "line": 94,
+                "line": 100,
                 "jsdoctags": [
                     {
                         "name": "elementRef",
@@ -544,7 +1122,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 62,
+                        "line": 68,
                         "jsdoctags": [
                             {
                                 "name": "value",
@@ -561,7 +1139,7 @@
                         "name": "active",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 59
+                        "line": 65
                     }
                 },
                 "disabled": {
@@ -580,7 +1158,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 71,
+                        "line": 77,
                         "jsdoctags": [
                             {
                                 "name": "value",
@@ -597,7 +1175,7 @@
                         "name": "disabled",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 68
+                        "line": 74
                     }
                 },
                 "disableRipple": {
@@ -616,7 +1194,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 81,
+                        "line": 87,
                         "jsdoctags": [
                             {
                                 "name": "value",
@@ -633,7 +1211,7 @@
                         "name": "disableRipple",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 77
+                        "line": 83
                     }
                 },
                 "rippleDisabled": {
@@ -642,7 +1220,7 @@
                         "name": "rippleDisabled",
                         "type": "boolean",
                         "returnType": "boolean",
-                        "line": 87
+                        "line": 93
                     }
                 }
             },
@@ -677,18 +1255,84 @@
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
+        },
+        {
+            "name": "RailNavigationComponent",
+            "id": "component-RailNavigationComponent-cd481161c397a9289cb2e8c7b213d8704ba2c886fdd11721f7934f6a33127423dd53912eedee5f7a417f8770aa7b49b33378bf95b8d789fbd46b24cb65a9821c",
+            "file": "src/app/containers/rail-navigation/rail-navigation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-rail-navigation",
+            "styleUrls": [
+                "./rail-navigation.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./rail-navigation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { NavigationService } from \"src/app/services/navigation.service\";\n\n@Component({\n  selector: \"app-rail-navigation\",\n  templateUrl: \"./rail-navigation.component.html\",\n  styleUrls: [\"./rail-navigation.component.scss\"],\n})\nexport class RailNavigationComponent {\n  constructor(readonly navigationService: NavigationService) {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./rail-navigation.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "navigationService",
+                        "type": "NavigationService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "navigationService",
+                        "type": "NavigationService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<ng-container *ngFor=\"let item of navigationService.navigation\">\n  <a\n    *ngIf=\"!item.isExternal\"\n    mat-navigation-rail-item\n    [routerLink]=\"item.link\"\n    #link=\"routerLinkActive\"\n    [active]=\"link.isActive\"\n    routerLinkActive\n    ariaCurrentWhenActive=\"page\"\n    [attr.aria-expanded]=\"item.children?.length\"\n    [attr.aria-label]=\"item.label\"\n    [attr.role]=\"item.children?.length ? 'button' : 'link'\"\n    ariaControls=\"navigationDrawer\"\n    (mouseenter)=\"navigationService.openNavigationDrawer(item, $event)\"\n    (focus)=\"navigationService.openNavigationDrawer(item, $event)\"\n  >\n    <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>\n    <span matNavigationRailItemLabel>{{ item.label }}</span>\n  </a>\n  <a\n    *ngIf=\"item.isExternal\"\n    mat-navigation-rail-item\n    [href]=\"item.link\"\n    target=\"_blank\"\n    [attr.aria-label]=\"item.label\"\n    role=\"link\"\n  >\n    <mat-icon matNavigationRailItemIcon>{{ item.icon }}</mat-icon>\n    <span matNavigationRailItemLabel>{{ item.label }}</span>\n  </a>\n</ng-container>\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-b2ed305e7ffeba6f02fee1161165e3df1ccb23221d0131d0710f076e83ed25d7a33996300517df2ce018de255fe412b64e6d46a277b1a6098e350441812581fe",
+            "id": "module-AppModule-532209c45942c575ee1ca27ca74929e93e0cbfaf8bc6b9fe9e63a101c53b812753644cf9b53f6b63c43add7cf2eae0ec8a7e376acd20a1178c161a389e254d7e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from \"@angular/core\";\r\nimport { BrowserModule } from \"@angular/platform-browser\";\r\n\r\nimport { AppRoutingModule } from \"./app-routing.module\";\r\nimport { AppComponent } from \"./app.component\";\r\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\r\nimport { MatNavigationRailModule } from \"./components/navigation-rail\";\r\nimport { MatIconModule } from \"@angular/material/icon\";\r\nimport { MatSidenavModule } from \"@angular/material/sidenav\";\r\nimport { BlankPage } from \"./pages/blank.page\";\r\nimport { MatListModule } from \"@angular/material/list\";\r\nimport { MatToolbarModule } from \"@angular/material/toolbar\";\r\nimport { MatButtonModule } from \"@angular/material/button\";\r\nimport { RailNavigationComponent } from \"./containers/rail-navigation/rail-navigation.component\";\nimport { DrawerNavigationComponent } from './containers/drawer-navigation/drawer-navigation.component';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent, BlankPage, RailNavigationComponent, DrawerNavigationComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    BrowserAnimationsModule,\r\n    MatNavigationRailModule,\r\n    MatIconModule,\r\n    MatSidenavModule,\r\n    MatListModule,\r\n    MatToolbarModule,\r\n    MatButtonModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -699,6 +1343,15 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "BlankPage"
+                        },
+                        {
+                            "name": "DrawerNavigationComponent"
+                        },
+                        {
+                            "name": "RailNavigationComponent"
                         }
                     ]
                 },
@@ -707,6 +1360,9 @@
                     "elements": [
                         {
                             "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "MatNavigationRailModule"
                         }
                     ]
                 },
@@ -730,13 +1386,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
+            "id": "module-AppRoutingModule-96d7693cd03b02a2ac6b47014cfe2f91548933d078ce90b571e71a390de0d2b4093080d96e89353d95ebf382a6e765172442b0847134564065bdedb2b644937a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { BlankPage } from \"./pages/blank.page\";\n\nconst routes: Routes = [{ path: \"**\", component: BlankPage }];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: \"reload\" })],\n  exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -897,6 +1553,26 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
+                "name": "MAT_NAVIGATION_RAIL",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/navigation-rail/navigation-rail.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "new InjectionToken<string>(\r\n  \"MAT_NAVIGATION_RAIL\"\r\n)"
+            },
+            {
+                "name": "navigation",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/data/navigation.data.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    label: \"Home\",\r\n    icon: \"home\",\r\n    link: \"/home\",\r\n  },\r\n  {\r\n    label: \"Get Started\",\r\n    icon: \"apps\",\r\n    link: \"/get-started\",\r\n  },\r\n  {\r\n    label: \"Develop\",\r\n    icon: \"code\",\r\n    link: \"/develop\",\r\n    children: [\r\n      {\r\n        label: \"Develop Overview\",\r\n        link: \"/develop\",\r\n      },\r\n      {\r\n        label: \"Android\",\r\n        link: \"/develop/android\",\r\n        children: [\r\n          {\r\n            label: \"MDC-Android\",\r\n            link: \"/develop/android/mdc-android\",\r\n          },\r\n          {\r\n            label: \"Jetpack Compose\",\r\n            link: \"/develop/android/jetpack-compose\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Flutter\",\r\n        link: \"/develop/flutter\",\r\n      },\r\n      {\r\n        label: \"Web\",\r\n        link: \"/develop/web\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Foundations\",\r\n    icon: \"book\",\r\n    link: \"/foundations\",\r\n    children: [\r\n      {\r\n        label: \"Foundations Overview\",\r\n        link: \"/foundations\",\r\n      },\r\n      {\r\n        label: \"Accessibility\",\r\n        link: \"/foundations/accessibility\",\r\n      },\r\n      {\r\n        label: \"Adaptive Design\",\r\n        link: \"/foundations/adaptive-design\",\r\n        children: [\r\n          {\r\n            label: \"Adaptive Design\",\r\n            link: \"/foundations/adaptive-design/overview\",\r\n          },\r\n          {\r\n            label: \"Design for large screens\",\r\n            link: \"/foundations/adaptive-design/large-screens/overview\",\r\n          },\r\n          {\r\n            label: \"Canonical layouts\",\r\n            link: \"/foundations/adaptive-design/canonical-layouts\",\r\n          },\r\n          {\r\n            label: \"Foldable devices\",\r\n            link: \"/foundations/adaptive-design/foldables/overview\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Customizing Material\",\r\n        link: \"/foundations/customization\",\r\n      },\r\n      {\r\n        label: \"Design Token\",\r\n        link: \"/foundations/design-tokens\",\r\n      },\r\n      {\r\n        label: \"Interaction States\",\r\n        link: \"/foundations/interaction-states\",\r\n      },\r\n      {\r\n        label: \"Material A-Z\",\r\n        link: \"glossary\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Styles\",\r\n    icon: \"palette\",\r\n    link: \"/styles\",\r\n    children: [\r\n      {\r\n        label: \"Styles overview\",\r\n        link: \"/styles\",\r\n      },\r\n      {\r\n        label: \"Color\",\r\n        link: \"/styles/color\",\r\n        children: [\r\n          {\r\n            label: \"Overview\",\r\n            link: \"/styles/color/overview\",\r\n          },\r\n          {\r\n            label: \"Color system\",\r\n            link: \"/styles/color/the-color-system\",\r\n          },\r\n          {\r\n            label: \"Dynamic color\",\r\n            link: \"/styles/color/dynamic-color\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Elevation\",\r\n        link: \"/styles/elevation\",\r\n      },\r\n      {\r\n        label: \"Icons\",\r\n        link: \"/styles/icons\",\r\n      },\r\n      {\r\n        label: \"Motion\",\r\n        link: \"/styles/motion\",\r\n        children: [\r\n          {\r\n            label: \"Overview\",\r\n            link: \"/styles/motion/overview\",\r\n          },\r\n          {\r\n            label: \"Easing and duration\",\r\n            link: \"/styles/motion/easing-and-duration\",\r\n          },\r\n          {\r\n            label: \"Transitions\",\r\n            link: \"/styles/motion/transitions\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Shape\",\r\n        link: \"/styles/shape\",\r\n      },\r\n      {\r\n        label: \"Typography\",\r\n        link: \"/styles/typography\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Components\",\r\n    icon: \"add_circle\",\r\n    link: \"/components\",\r\n    children: [\r\n      {\r\n        label: \"Components overview\",\r\n        link: \"/components\",\r\n      },\r\n      {\r\n        label: \"Badges\",\r\n        link: \"/components/badges\",\r\n      },\r\n      {\r\n        label: \"Bottom app bar\",\r\n        link: \"/components/bottom-app-bar\",\r\n      },\r\n      {\r\n        label: \"Bottom sheets\",\r\n        link: \"/components/bottom-sheets\",\r\n      },\r\n      {\r\n        label: \"Buttons\",\r\n        link: \"/components/buttons\",\r\n        children: [\r\n          {\r\n            label: \"All buttons\",\r\n            link: \"/components/buttons/all-buttons\",\r\n          },\r\n          {\r\n            label: \"Common buttons\",\r\n            link: \"/components/buttons/buttons\",\r\n          },\r\n          {\r\n            label: \"FAB\",\r\n            link: \"/components/buttons/floating-action-button\",\r\n          },\r\n          {\r\n            label: \"Extended FAB\",\r\n            link: \"/components/buttons/extended-fab\",\r\n          },\r\n          {\r\n            label: \"Icon buttons\",\r\n            link: \"/components/buttons/icon-buttons\",\r\n          },\r\n          {\r\n            label: \"Segmented buttons\",\r\n            link: \"/components/buttons/segmented-buttons\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Cards\",\r\n        link: \"/components/cards\",\r\n      },\r\n      {\r\n        label: \"Checkbox\",\r\n        link: \"/components/checkbox\",\r\n      },\r\n      {\r\n        label: \"Chips\",\r\n        link: \"/components/chips\",\r\n      },\r\n      {\r\n        label: \"Date pickers\",\r\n        link: \"/components/date-pickers\",\r\n      },\r\n      {\r\n        label: \"Dialogs\",\r\n        link: \"/components/dialogs\",\r\n      },\r\n      {\r\n        label: \"Divider\",\r\n        link: \"/components/divider\",\r\n      },\r\n      {\r\n        label: \"Lists\",\r\n        link: \"/components/lists\",\r\n      },\r\n      {\r\n        label: \"Menus\",\r\n        link: \"/components/menus\",\r\n      },\r\n      {\r\n        label: \"Navigation bar\",\r\n        link: \"/components/navigation-bar\",\r\n      },\r\n      {\r\n        label: \"Navigation drawer\",\r\n        link: \"/components/navigation-drawer\",\r\n      },\r\n      {\r\n        label: \"Navigation rail\",\r\n        link: \"/components/navigation-rail\",\r\n      },\r\n      {\r\n        label: \"Progress indicators\",\r\n        link: \"/components/progress-indicators\",\r\n      },\r\n      {\r\n        label: \"Radio button\",\r\n        link: \"/components/radio-button\",\r\n      },\r\n      {\r\n        label: \"Sliders\",\r\n        link: \"/components/sliders\",\r\n      },\r\n      {\r\n        label: \"Snackbar\",\r\n        link: \"/components/snackbar\",\r\n      },\r\n      {\r\n        label: \"Switch\",\r\n        link: \"/components/switch\",\r\n      },\r\n      {\r\n        label: \"Tabs\",\r\n        link: \"/components/tabs\",\r\n      },\r\n      {\r\n        label: \"Text fields\",\r\n        link: \"/components/text-fields\",\r\n      },\r\n      {\r\n        label: \"Time pickers\",\r\n        link: \"/components/time-pickers\",\r\n      },\r\n      {\r\n        label: \"Top app bar\",\r\n        link: \"/components/top-app-bar\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Blog\",\r\n    icon: \"pages\",\r\n    link: \"http://material.io/blog\",\r\n    isExternal: true,\r\n  },\r\n]"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -945,6 +1621,30 @@
                     "defaultValue": "{\n  production: false\n}"
                 }
             ],
+            "src/app/components/navigation-rail/navigation-rail.ts": [
+                {
+                    "name": "MAT_NAVIGATION_RAIL",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/navigation-rail/navigation-rail.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "new InjectionToken<string>(\r\n  \"MAT_NAVIGATION_RAIL\"\r\n)"
+                }
+            ],
+            "src/app/data/navigation.data.ts": [
+                {
+                    "name": "navigation",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/data/navigation.data.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    label: \"Home\",\r\n    icon: \"home\",\r\n    link: \"/home\",\r\n  },\r\n  {\r\n    label: \"Get Started\",\r\n    icon: \"apps\",\r\n    link: \"/get-started\",\r\n  },\r\n  {\r\n    label: \"Develop\",\r\n    icon: \"code\",\r\n    link: \"/develop\",\r\n    children: [\r\n      {\r\n        label: \"Develop Overview\",\r\n        link: \"/develop\",\r\n      },\r\n      {\r\n        label: \"Android\",\r\n        link: \"/develop/android\",\r\n        children: [\r\n          {\r\n            label: \"MDC-Android\",\r\n            link: \"/develop/android/mdc-android\",\r\n          },\r\n          {\r\n            label: \"Jetpack Compose\",\r\n            link: \"/develop/android/jetpack-compose\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Flutter\",\r\n        link: \"/develop/flutter\",\r\n      },\r\n      {\r\n        label: \"Web\",\r\n        link: \"/develop/web\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Foundations\",\r\n    icon: \"book\",\r\n    link: \"/foundations\",\r\n    children: [\r\n      {\r\n        label: \"Foundations Overview\",\r\n        link: \"/foundations\",\r\n      },\r\n      {\r\n        label: \"Accessibility\",\r\n        link: \"/foundations/accessibility\",\r\n      },\r\n      {\r\n        label: \"Adaptive Design\",\r\n        link: \"/foundations/adaptive-design\",\r\n        children: [\r\n          {\r\n            label: \"Adaptive Design\",\r\n            link: \"/foundations/adaptive-design/overview\",\r\n          },\r\n          {\r\n            label: \"Design for large screens\",\r\n            link: \"/foundations/adaptive-design/large-screens/overview\",\r\n          },\r\n          {\r\n            label: \"Canonical layouts\",\r\n            link: \"/foundations/adaptive-design/canonical-layouts\",\r\n          },\r\n          {\r\n            label: \"Foldable devices\",\r\n            link: \"/foundations/adaptive-design/foldables/overview\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Customizing Material\",\r\n        link: \"/foundations/customization\",\r\n      },\r\n      {\r\n        label: \"Design Token\",\r\n        link: \"/foundations/design-tokens\",\r\n      },\r\n      {\r\n        label: \"Interaction States\",\r\n        link: \"/foundations/interaction-states\",\r\n      },\r\n      {\r\n        label: \"Material A-Z\",\r\n        link: \"glossary\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Styles\",\r\n    icon: \"palette\",\r\n    link: \"/styles\",\r\n    children: [\r\n      {\r\n        label: \"Styles overview\",\r\n        link: \"/styles\",\r\n      },\r\n      {\r\n        label: \"Color\",\r\n        link: \"/styles/color\",\r\n        children: [\r\n          {\r\n            label: \"Overview\",\r\n            link: \"/styles/color/overview\",\r\n          },\r\n          {\r\n            label: \"Color system\",\r\n            link: \"/styles/color/the-color-system\",\r\n          },\r\n          {\r\n            label: \"Dynamic color\",\r\n            link: \"/styles/color/dynamic-color\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Elevation\",\r\n        link: \"/styles/elevation\",\r\n      },\r\n      {\r\n        label: \"Icons\",\r\n        link: \"/styles/icons\",\r\n      },\r\n      {\r\n        label: \"Motion\",\r\n        link: \"/styles/motion\",\r\n        children: [\r\n          {\r\n            label: \"Overview\",\r\n            link: \"/styles/motion/overview\",\r\n          },\r\n          {\r\n            label: \"Easing and duration\",\r\n            link: \"/styles/motion/easing-and-duration\",\r\n          },\r\n          {\r\n            label: \"Transitions\",\r\n            link: \"/styles/motion/transitions\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Shape\",\r\n        link: \"/styles/shape\",\r\n      },\r\n      {\r\n        label: \"Typography\",\r\n        link: \"/styles/typography\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Components\",\r\n    icon: \"add_circle\",\r\n    link: \"/components\",\r\n    children: [\r\n      {\r\n        label: \"Components overview\",\r\n        link: \"/components\",\r\n      },\r\n      {\r\n        label: \"Badges\",\r\n        link: \"/components/badges\",\r\n      },\r\n      {\r\n        label: \"Bottom app bar\",\r\n        link: \"/components/bottom-app-bar\",\r\n      },\r\n      {\r\n        label: \"Bottom sheets\",\r\n        link: \"/components/bottom-sheets\",\r\n      },\r\n      {\r\n        label: \"Buttons\",\r\n        link: \"/components/buttons\",\r\n        children: [\r\n          {\r\n            label: \"All buttons\",\r\n            link: \"/components/buttons/all-buttons\",\r\n          },\r\n          {\r\n            label: \"Common buttons\",\r\n            link: \"/components/buttons/buttons\",\r\n          },\r\n          {\r\n            label: \"FAB\",\r\n            link: \"/components/buttons/floating-action-button\",\r\n          },\r\n          {\r\n            label: \"Extended FAB\",\r\n            link: \"/components/buttons/extended-fab\",\r\n          },\r\n          {\r\n            label: \"Icon buttons\",\r\n            link: \"/components/buttons/icon-buttons\",\r\n          },\r\n          {\r\n            label: \"Segmented buttons\",\r\n            link: \"/components/buttons/segmented-buttons\",\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        label: \"Cards\",\r\n        link: \"/components/cards\",\r\n      },\r\n      {\r\n        label: \"Checkbox\",\r\n        link: \"/components/checkbox\",\r\n      },\r\n      {\r\n        label: \"Chips\",\r\n        link: \"/components/chips\",\r\n      },\r\n      {\r\n        label: \"Date pickers\",\r\n        link: \"/components/date-pickers\",\r\n      },\r\n      {\r\n        label: \"Dialogs\",\r\n        link: \"/components/dialogs\",\r\n      },\r\n      {\r\n        label: \"Divider\",\r\n        link: \"/components/divider\",\r\n      },\r\n      {\r\n        label: \"Lists\",\r\n        link: \"/components/lists\",\r\n      },\r\n      {\r\n        label: \"Menus\",\r\n        link: \"/components/menus\",\r\n      },\r\n      {\r\n        label: \"Navigation bar\",\r\n        link: \"/components/navigation-bar\",\r\n      },\r\n      {\r\n        label: \"Navigation drawer\",\r\n        link: \"/components/navigation-drawer\",\r\n      },\r\n      {\r\n        label: \"Navigation rail\",\r\n        link: \"/components/navigation-rail\",\r\n      },\r\n      {\r\n        label: \"Progress indicators\",\r\n        link: \"/components/progress-indicators\",\r\n      },\r\n      {\r\n        label: \"Radio button\",\r\n        link: \"/components/radio-button\",\r\n      },\r\n      {\r\n        label: \"Sliders\",\r\n        link: \"/components/sliders\",\r\n      },\r\n      {\r\n        label: \"Snackbar\",\r\n        link: \"/components/snackbar\",\r\n      },\r\n      {\r\n        label: \"Switch\",\r\n        link: \"/components/switch\",\r\n      },\r\n      {\r\n        label: \"Tabs\",\r\n        link: \"/components/tabs\",\r\n      },\r\n      {\r\n        label: \"Text fields\",\r\n        link: \"/components/text-fields\",\r\n      },\r\n      {\r\n        label: \"Time pickers\",\r\n        link: \"/components/time-pickers\",\r\n      },\r\n      {\r\n        label: \"Top app bar\",\r\n        link: \"/components/top-app-bar\",\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    label: \"Blog\",\r\n    icon: \"pages\",\r\n    link: \"http://material.io/blog\",\r\n    isExternal: true,\r\n  },\r\n]"
+                }
+            ],
             "src/app/components/navigation-rail/navigation-rail.stories.ts": [
                 {
                     "name": "Primary",
@@ -981,7 +1681,12 @@
                 "name": "routes",
                 "filename": "src/app/app-routing.module.ts",
                 "module": "AppRoutingModule",
-                "children": [],
+                "children": [
+                    {
+                        "path": "**",
+                        "component": "BlankPage"
+                    }
+                ],
                 "kind": "module"
             }
         ]
@@ -996,7 +1701,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -1071,6 +1776,80 @@
                 "name": "MatNavigationRailItemLabel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/navigation-rail/navigation-rail.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MAT_NAVIGATION_RAIL",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/containers/drawer-navigation/drawer-navigation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DrawerNavigationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/containers/rail-navigation/rail-navigation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RailNavigationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/data/navigation.data.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "NavigationItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/data/navigation.data.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "navigation",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/blank.page.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BlankPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/layout.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "LayoutService",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/navigation.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "NavigationService",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
