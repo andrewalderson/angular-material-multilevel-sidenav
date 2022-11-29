@@ -1,6 +1,6 @@
-import { Component, OnDestroy } from "@angular/core";
+import { Component } from "@angular/core";
 import { trigger, style, transition, animate } from "@angular/animations";
-import { Subject, filter, take, shareReplay } from "rxjs";
+import { filter, take, shareReplay } from "rxjs";
 import { navigation, NavigationItem } from "./navigation.data";
 import { Router, RouterEvent, NavigationEnd } from "@angular/router";
 import { select, Store } from "@ngrx/store";
