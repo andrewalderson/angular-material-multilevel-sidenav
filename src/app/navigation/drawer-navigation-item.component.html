@@ -1,0 +1,42 @@
+<ng-container *ngIf="navigationItem">
+  <a
+    *ngIf="!navigationItem.children?.length"
+    mat-list-item
+    [routerLink]="navigationItem.link"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: !!navigationItem.exactMatch }"
+    [attr.aria-label]="navigationItem.label"
+  >
+    {{ navigationItem.label }}</a
+  >
+  <ng-container *ngIf="navigationItem.children?.length">
+    <mat-list-item
+      role="button"
+      tabindex="0"
+      cdkAccordionItem
+      #disclosure="cdkAccordionItem"
+      [expanded]="isChildLinkActive(navigationItem.children!)"
+      [attr.aria-label]="navigationItem.label"
+      [attr.aria-expanded]="disclosure.expanded"
+      [attr.aria-controls]="disclosure.id"
+      (click)="disclosure.toggle()"
+      (keydown.enter)="disclosure.toggle()"
+    >
+      <span matLine>{{ navigationItem.label }}</span>
+      <mat-icon
+        [@indicatorRotate]="disclosure.expanded ? 'expanded' : 'collapsed'"
+        >expand_more</mat-icon
+      >
+    </mat-list-item>
+    <div
+      class="disclosure-body"
+      [@bodyExpansion]="disclosure.expanded ? 'expanded' : 'collapsed'"
+      [id]="disclosure.id"
+    >
+      <app-drawer-navigation-item
+        *ngFor="let child of navigationItem.children"
+        [navigationItem]="child"
+      ></app-drawer-navigation-item>
+    </div>
+  </ng-container>
+</ng-container>

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.mat-list-item.active,
+.mat-list-item.active:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.disclosure-body {
+  overflow: hidden;
+  .mat-list-item {
+    padding-left: 16px;
+  }
+}

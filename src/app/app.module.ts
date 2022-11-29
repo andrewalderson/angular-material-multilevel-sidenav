@@ -12,9 +12,10 @@ import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { CdkAccordionModule } from "@angular/cdk/accordion";
+import { DrawerNavigationItemComponent } from './navigation/drawer-navigation-item.component';
 
 @NgModule({
-  declarations: [AppComponent, BlankPage],
+  declarations: [AppComponent, BlankPage, DrawerNavigationItemComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

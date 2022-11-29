@@ -16,23 +16,6 @@ import { Router, RouterEvent, NavigationEnd } from "@angular/router";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
   animations: [
-    trigger("accordionIndicatorRotate", [
-      state("collapsed, void", style({ transform: "rotate(0deg)" })),
-      state("expanded", style({ transform: "rotate(180deg)" })),
-      transition(
-        "expanded <=> collapsed",
-        animate("225ms cubic-bezier(0.4,0.0,0.2,1)")
-      ),
-    ]),
-    trigger("accordionExpansion", [
-      // don't transition the 'void' state as it causes elements to flash on screen
-      // we are relying on the fact that the animation state is always set
-      state("collapsed, void", style({ height: "0px", visibility: "hidden" })),
-      state("expanded", style({ height: "*", visibility: "visible" })),
-      transition("expanded <=> collapsed", [
-        animate("225ms cubic-bezier(0.4,0.0,0.2,1)"),
-      ]),
-    ]),
     trigger("fadeInOut", [
       transition(":enter", [
         style({ opacity: 0 }),
@@ -165,14 +148,5 @@ export class AppComponent implements OnDestroy {
 
   isLinkActive(link: string, exact: boolean = false) {
     return this.router.isActive(link, exact);
-  }
-
-  isChildLinkActive(children: NavigationItem[], exact: boolean = false) {
-    for (let item of children) {
-      if (this.isLinkActive(item.link, exact)) {
-        return true;
-      }
-    }
-    return false;
   }
 }
