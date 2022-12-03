@@ -16,6 +16,7 @@ $label-bottom-padding: 16px;
 }
 
 .mat-navigation-rail-item {
+  display: block;
   position: relative;
   cursor: pointer;
   outline: none;

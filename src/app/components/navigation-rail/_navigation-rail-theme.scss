@@ -22,9 +22,7 @@
 
     &:hover,
     &:focus {
-      .mat-navigation-rail-item__content {
-        background: mat.get-color-from-palette($background, "hover");
-      }
+      background: mat.get-color-from-palette($background, "hover");
     }
   }
 
