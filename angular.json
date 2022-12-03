@@ -114,6 +114,9 @@
             "browserTarget": "angular-cli:build",
             "compodoc": false
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
