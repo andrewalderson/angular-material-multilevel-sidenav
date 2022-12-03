@@ -15,7 +15,8 @@
       #disclosure="cdkAccordionItem"
       [expanded]="isChildLinkActive(navigationItem.children!)"
       [attr.aria-expanded]="disclosure.expanded"
-      [attr.aria-controls]="disclosure.id"
+      attr.aria-controls="{{ disclosure.id }}-body"
+      [id]="disclosure.id"
       (click)="disclosure.toggle()"
     >
       <span matLine>{{ navigationItem.label }}</span>
@@ -27,7 +28,8 @@
     <div
       class="disclosure-body"
       [@bodyExpansion]="disclosure.expanded ? 'expanded' : 'collapsed'"
-      [id]="disclosure.id"
+      id="{{ disclosure.id }}-body"
+      [attr.aria-labelledby]="disclosure.id"
     >
       <app-drawer-navigation-item
         *ngFor="let child of navigationItem.children"
